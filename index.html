@@ -3,226 +3,592 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hogwarts - Escuela de Magia y Hechicería</title>
+    <title>Universidad Hogwarts - Inicio</title>
+    <link rel="icon" href="assets/img/logo-hogwarts.png" type="image/png">
 </head>
 <body>
-    <!-- Navbar -->
+
+    <!-- 1. Logo interactivo de Hogwarts -->
     <header>
-        <nav>
-            <ul>
+        <a href="index.html">
+            <img src="assets/img/logo-hogwarts.png" alt="Logo de Hogwarts" class="logo">
+        </a>
+
+        <!-- 2. Barra de navegación fija con enlaces rápidos -->
+        <nav class="navbar">
+            <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="programas.html">Programas Académicos</a></li>
-                <li><a href="admisiones.html">Admisiones</a></li>
-                <li><a href="profesores.html">Profesores</a></li>
+                <li><a href="academicos.html">Programas Académicos</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="casas.html">Casas</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="#sombrero-seleccionador">Sombrero Seleccionador</a></li>
             </ul>
         </nav>
+
+        <!-- 3. Botón de cambio de idioma (Español/Inglés) -->
+        <div class="language-switch">
+            <button id="lang-es" onclick="changeLanguage('es')">Español</button>
+            <button id="lang-en" onclick="changeLanguage('en')">English</button>
+        </div>
+
+        <!-- 4. Menú hamburguesa para dispositivos móviles -->
+        <div class="hamburger-menu">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="academicos.html">Programas</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="casas.html">Casas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Sección de bienvenida -->
-    <section id="bienvenida">
-        <h1>Bienvenido a Hogwarts</h1>
-        <p>La escuela más prestigiosa de magia y hechicería del mundo mágico. ¡Comienza tu aventura mágica aquí!</p>
-        <p>Desde el momento en que pongas un pie en el castillo, sentirás la magia en cada rincón. 
-           Atrévete a explorar los pasillos encantados y descubre los secretos ocultos en los muros de Hogwarts.</p>
+    <!-- 5. Submenú con las casas de Hogwarts -->
+    <nav class="submenu-houses">
+        <ul>
+            <li><a href="gryffindor.html">Gryffindor</a></li>
+            <li><a href="ravenclaw.html">Ravenclaw</a></li>
+            <li><a href="hufflepuff.html">Hufflepuff</a></li>
+            <li><a href="slytherin.html">Slytherin</a></li>
+        </ul>
+    </nav>
+
+    <!-- 6. Botones de Inicio de Sesión y Registro -->
+    <div class="auth-buttons">
+        <button onclick="window.location.href='login.html'">Iniciar Sesión</button>
+        <button onclick="window.location.href='register.html'">Registrarse</button>
+    </div>
+
+    <!-- 7. Aviso de cookies con un botón para aceptar -->
+    <div class="cookies-banner" id="cookies-banner">
+        <p>Utilizamos cookies para mejorar su experiencia. <a href="privacidad.html">Leer más</a>.</p>
+        <button id="accept-cookies">Aceptar</button>
+    </div>
+
+    <!-- 8. Barra de búsqueda -->
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar programas o noticias..." id="search-input">
+        <button onclick="search()">Buscar</button>
+    </div>
+
+    <!-- 9. Contador de visitas en tiempo real -->
+    <div class="visit-counter">
+        <p>Visitas actuales: <span id="visit-count">0</span></p>
+    </div>
+
+    <!-- 10. Iconos de redes sociales -->
+    <footer class="social-media">
+        <a href="https://facebook.com/HogwartsUni" target="_blank">
+            <img src="assets/img/facebook-icon.png" alt="Facebook">
+        </a>
+        <a href="https://twitter.com/HogwartsUni" target="_blank">
+            <img src="assets/img/twitter-icon.png" alt="Twitter">
+        </a>
+        <a href="https://instagram.com/HogwartsUni" target="_blank">
+            <img src="assets/img/instagram-icon.png" alt="Instagram">
+        </a>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secciones Académicas - Universidad Hogwarts</title>
+</head>
+
+    <!-- 11. Introducción a la universidad con historia y misión -->
+    <section id="introduccion-universidad">
+        <h2>Bienvenido a la Universidad de Hogwarts</h2>
+        <p>Desde tiempos inmemoriales, Hogwarts ha formado magos y brujas de todo el mundo, brindando conocimiento mágico y una comunidad de excelencia. Nuestra misión es fomentar la magia responsable y el desarrollo personal, preparando a nuestros estudiantes para los desafíos del mundo mágico moderno.</p>
     </section>
 
-    <!-- Información de programas académicos -->
-    <section id="programas">
+    <!-- 12. Lista de programas académicos con descripciones -->
+    <section id="programas-academicos">
         <h2>Programas Académicos</h2>
-        <p>En Hogwarts ofrecemos una amplia gama de cursos mágicos. Cada materia está diseñada para desarrollar tus habilidades y conocimientos mágicos al máximo:</p>
         <ul>
-            <li><strong>Pociones:</strong> Aprende a mezclar ingredientes y crear brebajes poderosos.</li>
-            <li><strong>Defensa Contra las Artes Oscuras:</strong> Prepárate para enfrentar y superar cualquier amenaza oscura.</li>
-            <li><strong>Herbología:</strong> Descubre los secretos de las plantas mágicas y su uso.</li>
-            <li><strong>Encantamientos:</strong> Domina los hechizos más útiles y fascinantes del mundo mágico.</li>
-            <li><strong>Astronomía:</strong> Estudia los cuerpos celestes y su influencia mágica.</li>
+            <li><strong>Hechicería Avanzada:</strong> Domina los hechizos más complejos y aprende a conjurar con precisión.</li>
+            <li><strong>Pociones:</strong> Aprende el arte de mezclar pociones para curar, transformar o mejorar habilidades.</li>
+            <li><strong>Astronomía:</strong> Estudia los cuerpos celestes y su influencia en la magia.</li>
+            <li><strong>Defensa Contra las Artes Oscuras:</strong> Desarrolla habilidades para protegerte de las amenazas más peligrosas.</li>
         </ul>
-        <p>Además, ofrecemos clases optativas como Runas Antiguas, Cuidado de Criaturas Mágicas y Estudios Muggles.</p>
-        <a href="programas.html">Ver todos los programas</a>
     </section>
 
-    <!-- Información de admisiones -->
-    <section id="admisiones">
-        <h2>Admisiones</h2>
-        <p>Descubre cómo aplicar a Hogwarts y conviértete en un gran mago o bruja. No importa si vienes de una familia mágica o muggle, las puertas de Hogwarts están abiertas para todos.</p>
-        <ul>
-            <li><strong>Edad mínima:</strong> 11 años</li>
-            <li><strong>Requisitos:</strong> Carta de aceptación oficial enviada por lechuza.</li>
-            <li><strong>Proceso:</strong> Inscripción en línea y pago inicial.</li>
-        </ul>
-        <a href="admisiones.html">Proceso de admisión</a>
+    <!-- 13. Calendario académico con fechas clave -->
+    <section id="calendario-academico">
+        <h2>Calendario Académico</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Evento</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Inicio de Clases</td>
+                    <td>1 de Septiembre</td>
+                </tr>
+                <tr>
+                    <td>Exámenes Parciales</td>
+                    <td>15 de Noviembre</td>
+                </tr>
+                <tr>
+                    <td>Vacaciones de Navidad</td>
+                    <td>20 de Diciembre - 5 de Enero</td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 
-    <!-- Sección de profesores -->
-    <section id="profesores">
-        <h2>Nuestros Profesores</h2>
-        <p>En Hogwarts contamos con los mejores magos del mundo como profesores, cada uno experto en su campo:</p>
+    <!-- 14. Horarios de clases por programa o semestre -->
+    <section id="horarios-clases">
+        <h2>Horarios de Clases</h2>
+        <p>Los horarios varían según el programa y el semestre. A continuación, se muestra un ejemplo para Hechicería Avanzada:</p>
         <ul>
-            <li><strong>Minerva McGonagall:</strong> Transformaciones</li>
-            <li><strong>Severus Snape:</strong> Pociones</li>
-            <li><strong>Albus Dumbledore:</strong> Dirección y magias avanzadas</li>
-            <li><strong>Remus Lupin:</strong> Defensa Contra las Artes Oscuras</li>
-            <li><strong>Filius Flitwick:</strong> Encantamientos</li>
+            <li>Lunes: Hechizos Elementales - 10:00 AM - 12:00 PM</li>
+            <li>Miércoles: Conjuración Avanzada - 2:00 PM - 4:00 PM</li>
+            <li>Viernes: Prácticas en Duelo - 3:00 PM - 5:00 PM</li>
         </ul>
-        <a href="profesores.html">Conoce a todos los profesores</a>
     </section>
 
-    <!-- Eventos -->
-    <section id="eventos">
-        <h2>Próximos Eventos</h2>
+    <!-- 15. Páginas individuales para cada programa -->
+    <section id="enlace-programas">
+        <h2>Más Información de los Programas</h2>
         <ul>
-            <li><strong>Torneo de los Tres Magos:</strong> 1 de noviembre</li>
-            <li><strong>Copa de Quidditch:</strong> 15 de diciembre</li>
-            <li><strong>Baile de Navidad:</strong> 24 de diciembre</li>
+            <li><a href="hechiceria.html">Hechicería Avanzada</a></li>
+            <li><a href="pociones.html">Pociones</a></li>
+            <li><a href="astronomia.html">Astronomía</a></li>
+            <li><a href="defensa.html">Defensa Contra las Artes Oscuras</a></li>
         </ul>
-        <a href="eventos.html">Ver más eventos</a>
     </section>
 
-    <!-- Sombrero Seleccionador -->
+    <!-- 16. Requisitos de admisión para cada carrera -->
+    <section id="requisitos-admision">
+        <h2>Requisitos de Admisión</h2>
+        <ul>
+            <li>Formulario de solicitud completo.</li>
+            <li>Ensayo personal explicando tu interés en la magia.</li>
+            <li>2 cartas de recomendación.</li>
+            <li>Evaluación preliminar de habilidades mágicas.</li>
+        </ul>
+    </section>
+
+    <!-- 17. Instructores destacados con fotos y biografías -->
+    <section id="instructores">
+        <h2>Instructores Destacados</h2>
+        <div class="instructor">
+            <img src="assets/img/profesor-dumbledore.jpg" alt="Albus Dumbledore">
+            <h3>Albus Dumbledore</h3>
+            <p>Especialista en magia avanzada y transfiguración. Ex-director de Hogwarts.</p>
+        </div>
+        <div class="instructor">
+            <img src="assets/img/profesora-mcgonagall.jpg" alt="Minerva McGonagall">
+            <h3>Minerva McGonagall</h3>
+            <p>Profesora de Transfiguración y actual directora de Hogwarts.</p>
+        </div>
+    </section>
+
+    <!-- 18. Blog académico con publicaciones recientes -->
+    <section id="blog-academico">
+        <h2>Blog Académico</h2>
+        <article>
+            <h3>Cómo Prepararte para los Exámenes Finales</h3>
+            <p>Consejos de nuestros expertos para tener éxito en tus evaluaciones mágicas.</p>
+        </article>
+        <article>
+            <h3>Entrevista con el Profesor Flitwick</h3>
+            <p>Conoce los secretos del arte del encantamiento de manos del maestro en la materia.</p>
+        </article>
+    </section>
+
+    <!-- 19. Biblioteca en línea con libros ficticios -->
+    <section id="biblioteca">
+        <h2>Biblioteca en Línea</h2>
+        <ul>
+            <li><a href="libros/hechizos-ancestrales.pdf" download>Hechizos Ancestrales</a></li>
+            <li><a href="libros/pociones-curativas.pdf" download>Pociones Curativas</a></li>
+        </ul>
+    </section>
+
+    <!-- 20. Centros de investigación en magia avanzada -->
+    <section id="centros-investigacion">
+        <h2>Centros de Investigación Mágica</h2>
+        <p>Hogwarts alberga varios centros de investigación dedicados al avance de la magia. Estos incluyen:</p>
+        <ul>
+            <li>Centro de Estudios sobre Magia Oscura</li>
+            <li>Laboratorio de Pociones Experimentales</li>
+            <li>Observatorio de Astronomía Mágica</li>
+        </ul>
+    </section>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casas y Vida Estudiantil - Universidad Hogwarts</title>
+</head>
+    <!-- 21. Descripción de cada casa -->
+    <section id="casas">
+        <h2>Las Casas de Hogwarts</h2>
+        <article>
+            <h3>Gryffindor</h3>
+            <p>Valentía, coraje y determinación son los rasgos principales de los estudiantes de Gryffindor.</p>
+        </article>
+        <article>
+            <h3>Ravenclaw</h3>
+            <p>Los estudiantes de Ravenclaw se caracterizan por su sabiduría, creatividad y amor por el aprendizaje.</p>
+        </article>
+        <article>
+            <h3>Hufflepuff</h3>
+            <p>Hufflepuff premia la lealtad, la paciencia y el trabajo duro de sus estudiantes.</p>
+        </article>
+        <article>
+            <h3>Slytherin</h3>
+            <p>Ambición y astucia son las características predominantes de los alumnos de Slytherin.</p>
+        </article>
+    </section>
+
+    <!-- 22. Sistema de puntos para las casas -->
+    <section id="puntos-casas">
+        <h2>Tabla de Puntos por Casa</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Casa</th>
+                    <th>Puntos Acumulados</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gryffindor</td>
+                    <td><span id="puntos-gryffindor">0</span></td>
+                </tr>
+                <tr>
+                    <td>Ravenclaw</td>
+                    <td><span id="puntos-ravenclaw">0</span></td>
+                </tr>
+                <tr>
+                    <td>Hufflepuff</td>
+                    <td><span id="puntos-hufflepuff">0</span></td>
+                </tr>
+                <tr>
+                    <td>Slytherin</td>
+                    <td><span id="puntos-slytherin">0</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 23. Test del Sombrero Seleccionador -->
     <section id="sombrero-seleccionador">
-        <h2>El Sombrero Seleccionador</h2>
-        <p>Al inscribirte en Hogwarts, el Sombrero Seleccionador decidirá a cuál de las cuatro casas pertenecerás. ¿Serás valiente como un Gryffindor, sabio como un Ravenclaw, leal como un Hufflepuff o astuto como un Slytherin?</p>
-        <p>El cuestionario del Sombrero Seleccionador se activará una vez que completes tu inscripción y realices el pago inicial.</p>
+        <h2>Test del Sombrero Seleccionador</h2>
+        <p>Responde las preguntas para descubrir a qué casa perteneces:</p>
+        <button onclick="iniciarTest()">Comenzar Test</button>
+        <div id="resultado-casa" style="display:none;">
+            <h3>¡Felicidades! Perteneces a <span id="casa-asignada"></span></h3>
+        </div>
     </section>
 
-    <!-- Formulario de contacto -->
+    <!-- 24. Actividades extracurriculares -->
+    <section id="actividades">
+        <h2>Actividades Extracurriculares</h2>
+        <ul>
+            <li>Club de Duelo</li>
+            <li>Equipo de Quidditch</li>
+            <li>Orquesta de Magos</li>
+            <li>Teatro Mágico</li>
+        </ul>
+    </section>
+
+    <!-- 25. Lista de clubes y asociaciones estudiantiles -->
+    <section id="clubes">
+        <h2>Clubes y Asociaciones</h2>
+        <ul>
+            <li>Club de Ajedrez Mágico</li>
+            <li>Sociedad de Estudios Oscuros</li>
+            <li>Club de Pociones Experimentales</li>
+        </ul>
+    </section>
+
+    <!-- 26. Galería de fotos de eventos pasados -->
+    <section id="galeria-eventos">
+        <h2>Galería de Eventos</h2>
+        <div class="galeria">
+            <img src="assets/img/banquete.jpg" alt="Banquete en el Gran Comedor">
+            <img src="assets/img/quidditch.jpg" alt="Partido de Quidditch">
+            <img src="assets/img/duelo.jpg" alt="Competencia de Duelo">
+        </div>
+    </section>
+
+    <!-- 27. Sección de noticias recientes y anuncios oficiales -->
+    <section id="noticias">
+        <h2>Noticias y Anuncios</h2>
+        <article>
+            <h3>Nueva Competencia de Duelo</h3>
+            <p>Este semestre se organizará una competencia de duelo entre casas. ¡Prepárate!</p>
+        </article>
+        <article>
+            <h3>Quidditch: Inscripciones Abiertas</h3>
+            <p>El equipo de Quidditch busca nuevos jugadores. ¡Únete ahora!</p>
+        </article>
+    </section>
+
+    <!-- 28. Tienda oficial con merchandising -->
+    <section id="tienda">
+        <h2>Tienda Oficial de Hogwarts</h2>
+        <ul>
+            <li>Bufanda de Gryffindor - 15 G</li>
+            <li>Varita Oficial de Ravenclaw - 20 G</li>
+            <li>Sudadera de Slytherin - 30 G</li>
+        </ul>
+    </section>
+
+    <!-- 29. Mapas del campus interactivos -->
+    <section id="mapa-campus">
+        <h2>Mapa del Campus</h2>
+        <p>Explora el campus de Hogwarts:</p>
+        <img src="assets/img/mapa-hogwarts.jpg" alt="Mapa de Hogwarts">
+    </section>
+
+    <!-- 30. Sistema de retroalimentación -->
+    <section id="retroalimentacion">
+        <h2>¡Tu Opinión Importa!</h2>
+        <form id="form-retroalimentacion">
+            <label for="comentarios">Comentarios:</label><br>
+            <textarea id="comentarios" rows="4" cols="50" placeholder="Escribe tus comentarios aquí..."></textarea><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Especiales - Universidad Hogwarts</title>
+</head>
+
+    <!-- 31. Inscripción al Torneo de los Tres Magos -->
+    <section id="inscripcion-torneo">
+        <h2>Inscripción al Torneo de los Tres Magos</h2>
+        <p>¿Crees que tienes lo necesario para participar en uno de los torneos más desafiantes del mundo mágico? ¡Inscríbete aquí!</p>
+        <form id="form-torneo">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" min="17" required><br>
+
+            <label for="casa">Casa:</label>
+            <select id="casa" name="casa">
+                <option value="gryffindor">Gryffindor</option>
+                <option value="ravenclaw">Ravenclaw</option>
+                <option value="hufflepuff">Hufflepuff</option>
+                <option value="slytherin">Slytherin</option>
+            </select><br>
+
+            <button type="submit">Enviar Inscripción</button>
+        </form>
+    </section>
+
+    <!-- 32. Agenda de actividades del Torneo -->
+    <section id="agenda-torneo">
+        <h2>Agenda del Torneo de los Tres Magos</h2>
+        <ul>
+            <li>Primera Prueba: 15 de Octubre - Bosque Prohibido</li>
+            <li>Segunda Prueba: 5 de Noviembre - Lago Negro</li>
+            <li>Tercera Prueba: 20 de Noviembre - Laberinto Encantado</li>
+        </ul>
+    </section>
+
+    <!-- 33. Cronograma de partidos de Quidditch -->
+    <section id="cronograma-quidditch">
+        <h2>Cronograma de Partidos de Quidditch</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Equipos</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10 de Octubre</td>
+                    <td>Gryffindor vs. Slytherin</td>
+                    <td>Por Jugar</td>
+                </tr>
+                <tr>
+                    <td>15 de Octubre</td>
+                    <td>Ravenclaw vs. Hufflepuff</td>
+                    <td>Por Jugar</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 34. Galería del Gran Comedor decorado -->
+    <section id="galeria-gran-comedor">
+        <h2>Galería del Gran Comedor</h2>
+        <div class="galeria">
+            <img src="assets/img/comedor-halloween.jpg" alt="Decoración de Halloween">
+            <img src="assets/img/comedor-navidad.jpg" alt="Decoración de Navidad">
+        </div>
+    </section>
+
+    <!-- 35. Encuesta de retroalimentación de los eventos -->
+    <section id="encuesta-eventos">
+        <h2>Encuesta de Retroalimentación</h2>
+        <form id="form-encuesta">
+            <label for="evento-favorito">¿Cuál fue tu evento favorito?</label><br>
+            <select id="evento-favorito" name="evento-favorito">
+                <option value="torneo">Torneo de los Tres Magos</option>
+                <option value="quidditch">Partidos de Quidditch</option>
+                <option value="banquete">Banquete en el Gran Comedor</option>
+            </select><br>
+
+            <label for="comentarios">Comentarios:</label><br>
+            <textarea id="comentarios" rows="4" cols="50" placeholder="Comparte tus comentarios aquí..."></textarea><br>
+
+            <button type="submit">Enviar Encuesta</button>
+        </form>
+    </section>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Servicios - Universidad Hogwarts</title>
+</head>
+
+    <!-- 41. Formulario de contacto -->
     <section id="contacto">
         <h2>Contacto</h2>
-        <form action="enviar.html" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br>
+        <p>¿Tienes alguna pregunta o sugerencia? Contáctanos a través del siguiente formulario:</p>
+        <form id="form-contacto">
+            <label for="nombre-contacto">Nombre Completo:</label>
+            <input type="text" id="nombre-contacto" name="nombre-contacto" required><br>
 
             <label for="email">Correo Electrónico:</label>
             <input type="email" id="email" name="email" required><br>
 
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br>
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..." required></textarea><br>
 
             <button type="submit">Enviar</button>
         </form>
     </section>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>© 2024 Hogwarts - Escuela de Magia y Hechicería. Todos los derechos reservados.</p>
-    </footer>
+    <!-- 42. Preguntas frecuentes (FAQ) -->
+    <section id="faq">
+        <h2>Preguntas Frecuentes</h2>
+        <details>
+            <summary>¿Cómo me registro en la universidad?</summary>
+            <p>El proceso de registro se realiza a través de la sección de inscripción en línea.</p>
+        </details>
+        <details>
+            <summary>¿Puedo cambiar de casa durante el semestre?</summary>
+            <p>No, la asignación de casas es definitiva una vez realizado el Test del Sombrero Seleccionador.</p>
+        </details>
+    </section>
 
-    <!-- Enlaces a otras páginas internas -->
-    <div id="links-internos">
-        <a href="historia.html">Historia de Hogwarts</a> |
-        <a href="biblioteca.html">Biblioteca Mágica</a> |
-        <a href="quidditch.html">Equipo de Quidditch</a>
-    </div>
-<!-- Continuación del HTML - Sombrero Seleccionador -->
-<section id="cuestionario-sombrero">
-    <h2>Cuestionario del Sombrero Seleccionador</h2>
-    <p>Responde las siguientes preguntas para que el Sombrero Seleccionador determine tu casa en Hogwarts. Recuerda responder con sinceridad.</p>
+    <!-- 43. Ofertas de becas y ayuda financiera -->
+    <section id="becas">
+        <h2>Becas y Ayuda Financiera</h2>
+        <p>Hogwarts ofrece diferentes programas de becas para apoyar a estudiantes talentosos y necesitados:</p>
+        <ul>
+            <li>Beca del Ministerio de Magia</li>
+            <li>Beca para Magos de Primera Generación</li>
+            <li>Ayuda Financiera de la Fundación Hogwarts</li>
+        </ul>
+    </section>
 
-    <form action="resultado.html" method="POST">
-        <h3>Pregunta 1: ¿Cuál de las siguientes cualidades valoras más?</h3>
-        <input type="radio" id="valentia" name="pregunta1" value="Gryffindor" required>
-        <label for="valentia">Valentía</label><br>
+    <!-- 44. Sistema de inscripción en línea -->
+    <section id="inscripcion">
+        <h2>Inscripción en Línea</h2>
+        <form id="form-inscripcion">
+            <label for="nombre-inscripcion">Nombre Completo:</label>
+            <input type="text" id="nombre-inscripcion" name="nombre-inscripcion" required><br>
 
-        <input type="radio" id="inteligencia" name="pregunta1" value="Ravenclaw">
-        <label for="inteligencia">Inteligencia</label><br>
+            <label for="programa">Programa Académico:</label>
+            <select id="programa" name="programa">
+                <option value="hechiceria">Hechicería</option>
+                <option value="pociones">Pociones</option>
+                <option value="defensa">Defensa Contra las Artes Oscuras</option>
+            </select><br>
 
-        <input type="radio" id="lealtad" name="pregunta1" value="Hufflepuff">
-        <label for="lealtad">Lealtad</label><br>
+            <label for="casa-preferencia">Casa de Preferencia (opcional):</label>
+            <input type="text" id="casa-preferencia" name="casa-preferencia"><br>
 
-        <input type="radio" id="ambicion" name="pregunta1" value="Slytherin">
-        <label for="ambicion">Ambición</label><br>
+            <button type="submit">Enviar Inscripción</button>
+        </form>
+    </section>
 
-        <h3>Pregunta 2: ¿Qué criatura mágica te gustaría tener como mascota?</h3>
-        <input type="radio" id="lechuza" name="pregunta2" value="Ravenclaw" required>
-        <label for="lechuza">Lechuza</label><br>
+    <!-- 45. Panel de estudiantes con acceso a calificaciones -->
+    <section id="panel-estudiantes">
+        <h2>Panel de Estudiantes</h2>
+        <p>Accede a tus calificaciones y materiales de clase desde el panel de estudiantes:</p>
+        <button onclick="abrirPanel()">Acceder al Panel</button>
+    </section>
 
-        <input type="radio" id="gato" name="pregunta2" value="Gryffindor">
-        <label for="gato">Gato</label><br>
+    <!-- 46. Políticas y términos de uso del portal -->
+    <section id="terminos">
+        <h2>Términos y Condiciones</h2>
+        <p>Al utilizar este portal, aceptas las políticas de Hogwarts y los términos de uso especificados.</p>
+        <a href="terminos.html" target="_blank">Leer términos completos</a>
+    </section>
 
-        <input type="radio" id="sapo" name="pregunta2" value="Hufflepuff">
-        <label for="sapo">Sapo</label><br>
+    <!-- 47. Información de contacto del personal administrativo -->
+    <section id="personal-administrativo">
+        <h2>Personal Administrativo</h2>
+        <ul>
+            <li>Albus Dumbledore - Director</li>
+            <li>Minerva McGonagall - Subdirectora</li>
+            <li>Severus Snape - Jefe de Slytherin</li>
+        </ul>
+    </section>
 
-        <input type="radio" id="serpiente" name="pregunta2" value="Slytherin">
-        <label for="serpiente">Serpiente</label><br>
+    <!-- 48. Horario de atención del personal administrativo -->
+    <section id="horario-atencion">
+        <h2>Horario de Atención</h2>
+        <p>Lunes a Viernes: 8:00 AM - 4:00 PM</p>
+        <p>Sábados: 9:00 AM - 1:00 PM</p>
+    </section>
 
-        <h3>Pregunta 3: ¿Qué camino elegirías en un bosque oscuro?</h3>
-        <input type="radio" id="camino-piedras" name="pregunta3" value="Hufflepuff" required>
-        <label for="camino-piedras">El camino de piedras brillantes</label><br>
+    <!-- 49. Acceso rápido a servicios de emergencia -->
+    <section id="servicios-emergencia">
+        <h2>Servicios de Emergencia</h2>
+        <p>En caso de emergencia, comunícate inmediatamente con:</p>
+        <ul>
+            <li>Enfermería de Hogwarts - Ext. 101</li>
+            <li>Ministerio de Magia - Línea de Emergencia Mágica</li>
+        </ul>
+    </section>
 
-        <input type="radio" id="camino-luces" name="pregunta3" value="Ravenclaw">
-        <label for="camino-luces">El sendero iluminado por luces azules</label><br>
-
-        <input type="radio" id="camino-ruinas" name="pregunta3" value="Gryffindor">
-        <label for="camino-ruinas">El sendero que conduce a unas ruinas antiguas</label><br>
-
-        <input type="radio" id="camino-oscuro" name="pregunta3" value="Slytherin">
-        <label for="camino-oscuro">El camino más oscuro, donde parece haber movimiento</label><br>
-
-        <h3>Pregunta 4: ¿Qué asignatura esperas con más ansias?</h3>
-        <input type="radio" id="pociones" name="pregunta4" value="Slytherin" required>
-        <label for="pociones">Pociones</label><br>
-
-        <input type="radio" id="defensa" name="pregunta4" value="Gryffindor">
-        <label for="defensa">Defensa Contra las Artes Oscuras</label><br>
-
-        <input type="radio" id="herbologia" name="pregunta4" value="Hufflepuff">
-        <label for="herbologia">Herbología</label><br>
-
-        <input type="radio" id="encantamientos" name="pregunta4" value="Ravenclaw">
-        <label for="encantamientos">Encantamientos</label><br>
-
-        <h3>Pregunta 5: ¿Qué palabra describe mejor tu personalidad?</h3>
-        <input type="radio" id="audaz" name="pregunta5" value="Gryffindor" required>
-        <label for="audaz">Audaz</label><br>
-
-        <input type="radio" id="curioso" name="pregunta5" value="Ravenclaw">
-        <label for="curioso">Curioso</label><br>
-
-        <input type="radio" id="compasivo" name="pregunta5" value="Hufflepuff">
-        <label for="compasivo">Compasivo</label><br>
-
-        <input type="radio" id="determinado" name="pregunta5" value="Slytherin">
-        <label for="determinado">Determinado</label><br>
-
-        <button type="submit">Enviar respuestas</button>
-    </form>
-</section>
-
-<!-- Resultados del cuestionario -->
-<section id="resultado">
-    <h2>¡Felicidades! Has sido seleccionado para una casa</h2>
-    <p>Según tus respuestas, el Sombrero Seleccionador te ha asignado a la siguiente casa:</p>
-    <div id="casa-resultado">
-        <p><strong>Tu casa:</strong> <span id="casa-nombre"></span></p>
-    </div>
-    <p>Prepárate para vivir grandes aventuras junto a tus nuevos compañeros de casa. ¡Que la magia esté siempre contigo!</p>
-</section>
-
-<!-- Instrucciones adicionales para el usuario -->
-<section id="instrucciones-finales">
-    <h2>¿Qué sigue después de la selección?</h2>
-    <ul>
-        <li>Recibirás tu lista de útiles escolares.</li>
-        <li>Tu lechuza traerá tu horario de clases.</li>
-        <li>Explora el castillo y conoce a tus compañeros.</li>
-    </ul>
-</section>
-
-<!-- Pie de página -->
-<footer>
-    <p>© 2024 Hogwarts - Escuela de Magia y Hechicería. Todos los derechos reservados.</p>
-</footer>
-
-<!-- Enlaces a otras páginas internas -->
-<div id="links-internos">
-    <a href="historia.html">Historia de Hogwarts</a> |
-    <a href="biblioteca.html">Biblioteca Mágica</a> |
-    <a href="quidditch.html">Equipo de Quidditch</a> |
-    <a href="resultado.html">Resultado del Sombrero</a>
-</div>
+    <!-- 50. Formulario para reportar problemas técnicos -->
+    <section id="soporte-tecnico">
+        <h2>Soporte Técnico</h2>
+        <p>¿Tienes problemas con el portal? Reporta el problema aquí:</p>
+        <form id="form-soporte">
+            <label for="detalle-problema">Descripción del Problema:</label><br>
+            <textarea id="detalle-problema" rows="4" cols="50" placeholder="Describe el problema..." required></textarea><br>
+            <button type="submit">Enviar Reporte</button>
+        </form>
+    </section>
 
 </body>
 </html>
+
