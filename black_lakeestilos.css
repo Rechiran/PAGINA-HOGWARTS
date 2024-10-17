@@ -1,0 +1,619 @@
+/* 1. Estilos Generales del Cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #00111a, #002b3a);
+    font-family: 'Poppins', sans-serif;
+    color: #e0f7fa;
+    overflow-x: hidden;
+}
+
+/* Animación de Fondo: Burbujas flotando */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('bubble.png') repeat;
+    opacity: 0.05;
+    animation: floatBubbles 25s infinite linear;
+}
+
+@keyframes floatBubbles {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1000px 2000px;
+    }
+}
+
+/* 2. Encabezado */
+.encabezado {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(120deg, #0a3d62, #1e90ff);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #1e90ff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.encabezado h1 {
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.encabezado .descripcion {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.8;
+    animation: pulse 4s infinite alternate;
+}
+
+/* Animación de Pulso en la Descripción */
+@keyframes pulse {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+/* 3. Barra de Navegación */
+.barra-navegacion {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    padding: 10px 0;
+    transition: background 0.3s ease;
+}
+
+.barra-navegacion ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.barra-navegacion li {
+    margin: 0 15px;
+}
+
+.barra-navegacion a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #1e90ff;
+    transition: color 0.3s;
+}
+
+.barra-navegacion a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* 4. Secciones */
+.seccion {
+    padding: 60px 10%;
+    margin: 30px 0;
+    border-radius: 10px;
+    background: rgba(0, 25, 40, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.seccion h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #00bcd4;
+    text-shadow: 0 0 8px #00bcd4;
+}
+
+/* 5. Tablas */
+.tabla-criaturas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.tabla-criaturas th, .tabla-criaturas td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #1e90ff;
+}
+
+.tabla-criaturas th {
+    background: #00334e;
+    color: #00ffff;
+}
+
+.tabla-criaturas tr:nth-child(even) {
+    background: rgba(0, 51, 78, 0.5);
+}
+
+/* 6. Galería de Imágenes */
+.galeria {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.galeria figure {
+    flex: 1 1 30%;
+    max-width: 30%;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.galeria img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 1s;
+}
+
+.galeria figure:hover {
+    transform: scale(1.05);
+}
+
+.galeria figure img:hover {
+    transform: scale(1.2);
+}
+
+/* 7. Botón Regresar */
+.boton-regresar {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.boton-regresar button {
+    background: #1e90ff;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.boton-regresar button:hover {
+    background: #00bcd4;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.5);
+}
+
+/* 8. Footer */
+.pie-de-pagina {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #00ffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out;
+}
+/* 9. Efecto de Partículas Mágicas en el Fondo */
+@keyframes particulasFlotantes {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.particulas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.particula {
+    position: absolute;
+    background: rgba(0, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: particulasFlotantes linear infinite;
+    mix-blend-mode: screen;
+    opacity: 0;
+}
+
+@keyframes generarParticulas {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.particula:nth-child(odd) {
+    width: 5px;
+    height: 5px;
+    animation-duration: 15s;
+}
+
+.particula:nth-child(even) {
+    width: 8px;
+    height: 8px;
+    animation-duration: 20s;
+}
+
+/* 10. Estilo de Formularios */
+.formulario-contacto {
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(0, 25, 50, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.formulario-contacto label {
+    display: block;
+    margin-bottom: 8px;
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #1e90ff;
+    border-radius: 5px;
+    background: rgba(0, 51, 78, 0.8);
+    color: #e0f7fa;
+    transition: border-color 0.3s;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+    border-color: #00ffff;
+    outline: none;
+}
+
+.boton-enviar {
+    background: #1e90ff;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.boton-enviar:hover {
+    background: #00bcd4;
+    transform: scale(1.1);
+}
+
+/* 11. Transiciones en Hover para Imágenes */
+.galeria img {
+    transition: all 1.5s ease-in-out;
+}
+
+.galeria img:hover {
+    filter: hue-rotate(200deg) brightness(1.2);
+    transform: scale(1.15) rotate(2deg);
+}
+
+/* 12. Animación en Elementos de Lista */
+.lista-lugares {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    animation: aparecerLista 2s ease-in-out;
+}
+
+.lista-lugares li {
+    background: rgba(0, 51, 78, 0.7);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    color: #00ffff;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.lista-lugares li:hover {
+    background: #00334e;
+    transform: translateX(5px);
+    box-shadow: 0 0 10px #00ffff;
+}
+
+@keyframes aparecerLista {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 13. Botones con Efecto de Agua */
+.boton-agua {
+    position: relative;
+    display: inline-block;
+    padding: 12px 25px;
+    color: #fff;
+    background: linear-gradient(45deg, #1e90ff, #00bcd4);
+    border: none;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.boton-agua::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 80%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s, opacity 1s;
+    opacity: 0;
+}
+
+.boton-agua:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* 14. Efecto de Sombras en las Secciones */
+.seccion {
+    transition: box-shadow 0.5s;
+}
+
+.seccion:hover {
+    box-shadow: 0 0 30px #00ffff;
+}
+/* 15. Efecto de Paralaje para el Fondo */
+.fondo-paralaje {
+    background: url('black_lake.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    animation: parallaxMovimiento 10s infinite alternate ease-in-out;
+}
+
+@keyframes parallaxMovimiento {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+/* 16. Efecto de Niebla Mágica */
+@keyframes niebla {
+    0% {
+        opacity: 0.6;
+        transform: translateX(-10px);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 0.6;
+        transform: translateX(-10px);
+    }
+}
+
+.niebla {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    filter: blur(15px);
+    animation: niebla 30s infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* 17. Sistema de Iluminación Dinámico */
+.efecto-luz {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: luzMovimiento 10s infinite alternate;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 3;
+}
+
+@keyframes luzMovimiento {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        transform: translate(-40%, -60%) scale(1.2);
+    }
+}
+
+/* 18. Animación de Ondas Interactivas al Pasar el Mouse */
+@keyframes ondas {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+.contenedor-ondas {
+    position: relative;
+    overflow: hidden;
+}
+
+.ondas {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(0, 150, 255, 0.3);
+    animation: ondas 2s ease-out;
+    pointer-events: none;
+}
+
+.contenedor-ondas:hover::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: ondas 2s ease-out;
+    transform: translate(-50%, -50%);
+}
+
+/* 19. Botones con Animación de Brillo */
+.boton-brillante {
+    background: linear-gradient(45deg, #006994, #00bcd4);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.5s;
+}
+
+.boton-brillante::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-45deg);
+    transition: all 0.7s;
+}
+
+.boton-brillante:hover::before {
+    left: 150%;
+}
+
+/* 20. Animación de Resplandor en Títulos */
+@keyframes resplandor {
+    0%, 100% {
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00bcd4;
+    }
+    50% {
+        text-shadow: 0 0 20px #00bcd4, 0 0 30px #1e90ff, 0 0 40px #1e90ff;
+    }
+}
+
+.titulo-resplandor {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    color: #00ffff;
+    animation: resplandor 3s infinite;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 21. Pie de Página con Animación */
+.pie-pagina {
+    background: #001f3f;
+    color: #e0f7fa;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.pie-pagina a {
+    color: #00ffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.pie-pagina a:hover {
+    color: #1e90ff;
+}
+
+/* 22. Efecto de Desvanecimiento al Cargar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.cargar-efecto {
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* 23. Scroll Suave */
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 150, 255, 0.7);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 150, 255, 1);
+}

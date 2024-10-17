@@ -1,0 +1,412 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Garamond', serif; /* Fuente elegante */
+    background-color: #f0f0f0; /* Fondo claro */
+    color: #333; /* Color de texto oscuro */
+    line-height: 1.6; /* Espaciado de línea */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(to right, #4A2C2A, #6D4D4D);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: float 3s ease-in-out infinite; /* Animación de flotación */
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Secciones */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 40px;
+    background-color: white; /* Fondo blanco para las secciones */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* Para contener las partículas */
+}
+
+/* Títulos de sección */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #4A2C2A; /* Color marrón oscuro */
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 5px;
+    background: #FFC107; /* Color dorado */
+    margin-top: 5px;
+    transition: width 0.5s ease; /* Transición de ancho */
+}
+
+/* Hover en títulos */
+h2:hover::after {
+    width: 100px; /* Aumenta el ancho al pasar el ratón */
+}
+
+/* Lista de aves */
+#owls ul {
+    list-style-type: none; /* Sin viñetas */
+}
+
+#owls li {
+    margin: 15px 0;
+    padding: 10px;
+    border-left: 5px solid #FFC107; /* Borde dorado a la izquierda */
+    transition: background 0.3s ease; /* Transición de fondo */
+}
+
+#owls li:hover {
+    background: rgba(255, 193, 7, 0.1); /* Fondo ligero al pasar el ratón */
+}
+
+/* Imágenes responsivas */
+.responsive {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease; /* Transición de imagen */
+}
+
+.responsive:hover {
+    transform: scale(1.05); /* Aumentar tamaño al pasar el ratón */
+}
+
+/* Botón de regreso */
+#map-button {
+    background-color: #4A2C2A; /* Fondo marrón oscuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transiciones de fondo y transformaciones */
+    display: block;
+    margin: 20px auto; /* Centrado */
+}
+
+#map-button:hover {
+    background-color: #6D4D4D; /* Cambia el fondo al pasar el ratón */
+    transform: scale(1.1); /* Aumenta el tamaño al pasar el ratón */
+}
+
+/* Partículas */
+.particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8); /* Partículas blancas */
+    border-radius: 50%; /* Partículas redondas */
+    pointer-events: none; /* Evita interacciones */
+    opacity: 0.7; /* Semi-transparente */
+    animation: fall linear infinite; /* Animación de caída */
+}
+
+/* Animación de caída */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh); /* Caen hasta el final de la pantalla */
+        opacity: 0; /* Se desvanecen al final */
+    }
+}
+
+/* Crear partículas al cargar la página */
+@keyframes createParticles {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Continuación de estilos sin partículas */
+
+/* Efecto de desplazamiento en las secciones */
+section {
+    overflow: hidden; /* Mantener el contenido dentro del área */
+}
+
+#description {
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+}
+
+#description p {
+    font-size: 1.2rem; /* Tamaño de fuente más grande */
+    line-height: 1.5; /* Espaciado de línea mejorado */
+    position: relative;
+}
+
+/* Sombras de texto en la descripción */
+#description p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Sombra suave */
+    z-index: -1;
+    filter: blur(10px); /* Difumina la sombra */
+}
+
+/* Efectos de hover en la lista de aves */
+#owls li:hover {
+    transform: translateY(-5px); /* Levantar el elemento al pasar el ratón */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+}
+
+/* Animaciones de aparición */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Iniciar desde abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+/* Aplicar animación de aparición a cada sección */
+section {
+    animation: appear 0.5s ease forwards; /* Animación al aparecer */
+}
+
+/* Cambios de fondo en el botón */
+#map-button {
+    position: relative;
+    overflow: hidden; /* Mantener el contenido dentro del botón */
+    transition: background 0.3s ease;
+}
+
+/* Efecto de fondo dinámico */
+#map-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Aumenta el tamaño para el efecto */
+    height: 300%; /* Aumenta el tamaño para el efecto */
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.5), transparent);
+    transition: transform 0.5s ease;
+    transform: translate(-50%, -50%) scale(0); /* Comienza invisible */
+    z-index: 0; /* Detrás del texto */
+}
+
+#map-button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Se expande al pasar el ratón */
+}
+
+#map-button:hover {
+    color: #FFC107; /* Cambia el color del texto al pasar el ratón */
+}
+
+/* Fondo animado para el body */
+body {
+    background: linear-gradient(135deg, #B5E3E4, #5C9D9F);
+    background-size: 200% 200%; /* Aumentar el tamaño para la animación */
+    animation: gradient 15s ease infinite; /* Animación de gradiente */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #4A2C2A; /* Color de fondo marrón oscuro */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem; /* Tamaño de fuente */
+}
+/* Continuación de estilos para The Owlery */
+
+/* Estilo general para el cuerpo */
+body {
+    font-family: 'Garamond', serif; /* Fuente elegante */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Mejorar la legibilidad */
+    color: #333; /* Color del texto */
+}
+
+/* Estilos del encabezado */
+header {
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro y semitransparente */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10; /* Asegurarse de que esté por encima de otras capas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+}
+
+/* Estilo del título */
+header h1 {
+    font-size: 3rem; /* Tamaño grande para el título */
+    margin: 0;
+}
+
+/* Enlaces dentro del encabezado */
+header a {
+    color: #FFC107; /* Color dorado para enlaces */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Negrita para mayor énfasis */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+header a:hover {
+    color: #FFEA00; /* Color más brillante al pasar el ratón */
+}
+
+/* Estilo para el contenedor de la descripción */
+#description {
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
+}
+
+/* Estilo para la lista de aves */
+#owls {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0;
+}
+
+/* Estilo para los elementos de la lista de aves */
+#owls li {
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco y semi-transparente */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para efectos */
+}
+
+/* Hover para elementos de la lista de aves */
+#owls li:hover {
+    transform: translateY(-3px); /* Levantar un poco al pasar el ratón */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+}
+
+/* Estilo para el botón de regreso */
+#map-button {
+    display: inline-block; /* Mostrar como bloque en línea */
+    padding: 10px 20px;
+    background-color: #4A2C2A; /* Color marrón oscuro */
+    color: white; /* Texto blanco */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    transition: background-color 0.3s ease; /* Transición para el color de fondo */
+}
+
+#map-button:hover {
+    background-color: #6B4A4A; /* Color más claro al pasar el ratón */
+}
+
+/* Estilo del pie de página */
+footer {
+    margin-top: 30px; /* Margen superior */
+    padding: 15px;
+    position: relative;
+    z-index: 10; /* Asegurar que esté por encima del contenido */
+}
+
+/* Efecto de parpadeo para el pie de página */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    animation: blink 1.5s infinite; /* Parpadeo continuo */
+}
+
+/* Efecto de lluvia mágica */
+.rain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* No interactuable */
+}
+
+.rain div {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7); /* Blanco semi-transparente */
+    width: 2px;
+    height: 10px; /* Altura de las gotas */
+    animation: fall linear infinite; /* Caída continua */
+}
+
+/* Animación de caída */
+@keyframes fall {
+    to {
+        transform: translateY(100vh); /* Caer hasta el fondo */
+    }
+}

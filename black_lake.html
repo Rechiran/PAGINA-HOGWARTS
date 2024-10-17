@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lago Negro - Black Lake</title>
+    <link rel="stylesheet" href="black_lakeestilos.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>El Misterioso Lago Negro</h1>
+        <p class="descripcion">
+            Sumérgete en los secretos y la calma del Lago Negro. Desde la superficie tranquila hasta las profundidades oscuras, 
+            este cuerpo de agua es hogar de criaturas mágicas y leyendas que perduran.
+        </p>
+    </header>
+
+    <nav class="barra-navegacion">
+        <ul>
+            <li><a href="#historia">Historia del Lago</a></li>
+            <li><a href="#criaturas">Criaturas del Lago</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#leyendas">Leyendas y Curiosidades</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Sección Historia del Lago -->
+        <section id="historia" class="seccion">
+            <h2>Historia del Lago Negro</h2>
+            <p>
+                El Lago Negro ha sido una parte esencial de la vida en Hogwarts durante siglos. Se dice que su profundidad es 
+                insondable y que los fundadores de Hogwarts eligieron este sitio debido a las propiedades mágicas del agua. 
+                El lago ha jugado un papel importante en varios eventos históricos, incluyendo la <em>segunda tarea</em> del 
+                Torneo de los Tres Magos, donde los campeones tuvieron que rescatar a seres queridos de las profundidades.
+            </p>
+        </section>
+
+        <!-- Sección Criaturas del Lago -->
+        <section id="criaturas" class="seccion">
+            <h2>Criaturas Mágicas del Lago Negro</h2>
+            <p>El Lago Negro alberga una variedad de criaturas mágicas. A continuación, se muestra una lista con algunas de ellas:</p>
+            <table class="tabla-criaturas">
+                <thead>
+                    <tr>
+                        <th>Criatura</th>
+                        <th>Descripción</th>
+                        <th>Peligrosidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sirenas</td>
+                        <td>Seres acuáticos que residen en el fondo del lago. Aunque no son hostiles, pueden ser territoriales.</td>
+                        <td>Moderada</td>
+                    </tr>
+                    <tr>
+                        <td>Grindylows</td>
+                        <td>Demonios acuáticos pequeños con tentáculos. Pueden atacar si se sienten amenazados.</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>Calamar Gigante</td>
+                        <td>Una criatura amistosa que ocasionalmente emerge a la superficie para jugar.</td>
+                        <td>Baja</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Sección Galería de Imágenes -->
+        <section id="galeria" class="seccion">
+            <h2>Galería del Lago Negro</h2>
+            <div class="galeria">
+                <figure>
+                    <img src="black_lake_1.jpg" alt="Vista del Lago Negro">
+                    <figcaption>El Lago Negro en invierno.</figcaption>
+                </figure>
+                <figure>
+                    <img src="black_lake_2.jpg" alt="Calma en el Lago Negro">
+                    <figcaption>La superficie tranquila del lago al atardecer.</figcaption>
+                </figure>
+                <figure>
+                    <img src="black_lake_3.jpg" alt="Bajo el agua">
+                    <figcaption>Misteriosas profundidades del lago.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Sección Leyendas y Curiosidades -->
+        <section id="leyendas" class="seccion">
+            <h2>Leyendas y Curiosidades</h2>
+            <blockquote class="cita">
+                "El Lago Negro no es solo agua... es un espejo del alma de Hogwarts, donde los secretos se ocultan en las sombras." 
+                <br> — Albus Dumbledore
+            </blockquote>
+            <p>
+                Además de las criaturas que lo habitan, se dice que en las noches de luna llena, las aguas del Lago Negro 
+                reflejan cosas que no se encuentran en este mundo. Los estudiantes más aventureros afirman haber visto destellos de 
+                otras dimensiones bajo su superficie.
+            </p>
+        </section>
+
+        <!-- Botón para Volver al Mapa -->
+        <div class="boton-regresar">
+            <button onclick="volverAlMapa()">Volver al Mapa de Hogwarts</button>
+        </div>
+    </main>
+
+    <footer class="pie-de-pagina">
+        <p>© 2024 Hogwarts. Todos los derechos reservados. | Inspirado en las maravillas del mundo mágico.</p>
+    </footer>
+
+    <script>
+        // Función para volver a la página del mapa de Hogwarts
+        function volverAlMapa() {
+            window.location.href = "hogwarts.html";
+        }
+    </script>
+</body>
+</html>

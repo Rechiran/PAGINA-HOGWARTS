@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Hogwarts - Inicio</title>
+    <link rel="icon" href="logohogwarts.png" type="image/png">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header>
+    <img src="logohogwarts.png" alt="Logo de la Universidad Hogwarts" class="logo">
+
+    <nav class="navbar desktop-nav">
+        <ul class="nav-links">
+            <li><a href="#programas-academicos" data-translate="Programas Académicos">Programas Académicos</a></li>
+            <li><a href="#galeria-eventos" data-translate="Eventos">Eventos</a></li>
+            <li><a href="#casas" data-translate="Casas">Casas</a></li>
+            <li><a href="#contacto" data-translate="Contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+       
+    </header>
+       
+    <div class="language-switch">
+        <button id="lang-es" onclick="changeLanguage('es')" class="active">
+            <img src="españalogo.png" alt="Bandera de España">
+            <span>Español</span>
+        </button>
+        
+        <button id="lang-en" onclick="changeLanguage('en')">
+            <img src="eulogo.png" alt="Bandera de EEUu">
+            <span>English</span>
+        </button>
+    </div>
+    
+    <nav class="submenu-houses">
+        <ul>
+            <li>
+                <div class="house-card gryffindor">
+                    <div class="profile-pic">
+                        <img src="pngegg.png" alt="Gryffindor Logo">
+                    </div>
+                    <div class="content">
+                        <a data-translate="Gryffindor">Gryffindor</a>
+                        <p data-translate="Valor, coraje y determinación.">Valor, coraje y determinación.</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="house-card ravenclaw">
+                    <div class="profile-pic">
+                        <img src="Ravenclaw.png" alt="Ravenclaw Logo">
+                    </div>
+                    <div class="content">
+                        <a data-translate="Ravenclaw">Ravenclaw</a>
+                        <p data-translate="Sabiduría, creatividad y aprendizaje.">Sabiduría, creatividad y aprendizaje.</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="house-card hufflepuff">
+                    <div class="profile-pic">
+                        <img src="huflepuff.png" alt="Hufflepuff Logo">
+                    </div>
+                    <div class="content">
+                        <a data-translate="Hufflepuff">Hufflepuff</a>
+                        <p data-translate="Lealtad, paciencia y trabajo duro.">Lealtad, paciencia y trabajo duro.</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="house-card slytherin">
+                    <div class="profile-pic">
+                        <img src="Slytherin.png" alt="Slytherin Logo">
+                    </div>
+                    <div class="content">
+                        <a data-translate="Slytherin">Slytherin</a>
+                        <p data-translate="Ambición, astucia y liderazgo.">Ambición, astucia y liderazgo.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <div class="auth-buttons">
+        <button id="loginButton" data-translate="Iniciar Sesión">Iniciar Sesión</button>
+        <button id="registerButton" data-translate="Registrarse">Registrarse</button>
+    </div>
+    
+    <form id="loginFormElement" class="hiddenform auth-form">
+        <h2 data-translate="Iniciar Sesión">Iniciar Sesión</h2>
+        <input type="email" id="loginformEmail" placeholder="Correo electrónico" required data-translate="Correo electrónico">
+        <input type="password" id="loginformPassword" placeholder="Contraseña" required data-translate="Contraseña">
+        <button type="submit" data-translate="Ingresar">Ingresar</button>
+        <button type="button" id="backToAuth" data-translate="Volver">Volver</button>
+    </form>
+    
+    <form id="registerFormElement" class="hiddenform auth-form">
+        <h2 data-translate="Registrarse">Registrarse</h2>
+        <input type="text" id="registerformUsername" placeholder="Nombre de usuario" required data-translate="Nombre de usuario">
+        <input type="email" id="registerformEmail" placeholder="Correo electrónico" required data-translate="Correo electrónico">
+        <input type="password" id="registerformPassword" placeholder="Contraseña" required data-translate="Contraseña">
+        <button type="submit" data-translate="Registrar">Registrar</button>
+        <button type="button" id="backToAuthRegister" data-translate="Volver">Volver</button>
+    </form>
+    
+    <div id="logoutSection" class="hidden">
+        <h2 data-translate="Bienvenido,">Bienvenido, <span id="userName"></span></h2>
+        <button id="logoutButton" data-translate="Cerrar Sesión">Cerrar Sesión</button>
+    </div>
+    
+    
+
+    
+    
+
+
+   
+    <div class="cookies-banner" id="cookies-banner">
+        <p>Utilizamos cookies para mejorar su experiencia. <a href="privacidad.html">Leer más</a>.</p>
+        <button id="accept-cookies">Aceptar</button>
+    </div>
+
+   
+    <div id="main">
+        <div class="grid"></div>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar...">
+          <span id="search-icon">🔍</span>
+          <button>
+            <div class="filterBorder"></div>
+          </button>
+        </div>
+      </div>
+      
+
+    
+    <div class="visit-counter">
+        <p>Visitas actuales: <span id="visit-count">0</span></p>
+    </div>
+
+   
+    <footer class="social-media">
+        <a href="https://facebook.com/HogwartsUni" target="_blank">
+            <img src="facelogo.png" alt="Facebook de la Universidad Hogwarts">
+        </a>
+        <a href="https://twitter.com/HogwartsUni" target="_blank">
+            <img src="logotwiter.png" alt="Twitter de la Universidad Hogwarts">
+        </a>
+        <a href="https://instagram.com/HogwartsUni" target="_blank">
+            <img src="logoig.png" alt="Instagram de la Universidad Hogwarts">
+        </a>
+    </footer>
+   
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secciones Académicas - Universidad Hogwarts</title>
+</head>
+
+
+<section id="introduccion-universidad" class="fade-in">
+    <h2 data-translate="Bienvenido a la Universidad de Hogwarts">Bienvenido a la Universidad de Hogwarts</h2>
+    <p data-translate="Desde tiempos inmemoriales, Hogwarts ha formado magos y brujas de todo el mundo, brindando conocimiento mágico y una comunidad de excelencia. Nuestra misión es fomentar la magia responsable y el desarrollo personal, preparando a nuestros estudiantes para los desafíos del mundo mágico moderno.">
+        Desde tiempos inmemoriales, Hogwarts ha formado magos y brujas de todo el mundo, brindando conocimiento mágico y una comunidad de excelencia. Nuestra misión es fomentar la magia responsable y el desarrollo personal, preparando a nuestros estudiantes para los desafíos del mundo mágico moderno.
+    </p>
+</section>
+
+<section id="programas-academicos" class="slide-in">
+    <h2 data-translate="Programas Académicos">Programas Académicos</h2>
+    <ul>
+        <li data-translate="Hechicería Avanzada: Domina los hechizos más complejos y aprende a conjurar con precisión.">
+            <strong>Hechicería Avanzada:</strong> Domina los hechizos más complejos y aprende a conjurar con precisión.
+        </li>
+        <li data-translate="Pociones: Aprende el arte de mezclar pociones para curar, transformar o mejorar habilidades.">
+            <strong>Pociones:</strong> Aprende el arte de mezclar pociones para curar, transformar o mejorar habilidades.
+        </li>
+        <li data-translate="Astronomía: Estudia los cuerpos celestes y su influencia en la magia.">
+            <strong>Astronomía:</strong> Estudia los cuerpos celestes y su influencia en la magia.
+        </li>
+        <li data-translate="Defensa Contra las Artes Oscuras: Desarrolla habilidades para protegerte de las amenazas más peligrosas.">
+            <strong>Defensa Contra las Artes Oscuras:</strong> Desarrolla habilidades para protegerte de las amenazas más peligrosas.
+        </li>
+    </ul>
+</section>
+
+
+<section id="calendario-academico">
+    <h2 data-translate="Calendario Académico">Calendario Académico</h2>
+    <table>
+        <thead>
+            <tr>
+                <th data-translate="Evento">Evento</th>
+                <th data-translate="Fecha">Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-translate="Inicio de Clases">Inicio de Clases</td>
+                <td data-translate="1 de Septiembre">1 de Septiembre</td>
+            </tr>
+            <tr>
+                <td data-translate="Exámenes Parciales">Exámenes Parciales</td>
+                <td data-translate="15 de Noviembre">15 de Noviembre</td>
+            </tr>
+            <tr>
+                <td data-translate="Vacaciones de Navidad">Vacaciones de Navidad</td>
+                <td data-translate="20 de Diciembre - 5 de Enero">20 de Diciembre - 5 de Enero</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+<section id="horarios-clases">
+    <h2 data-translate="Horarios de Clases">Horarios de Clases</h2>
+    <p data-translate="Ejemplo de horario para Hechicería Avanzada:">Ejemplo de horario para Hechicería Avanzada:</p>
+    <ul>
+        <li data-translate="Lunes: Hechizos Elementales - 10:00 AM - 12:00 PM">Lunes: Hechizos Elementales - 10:00 AM - 12:00 PM</li>
+        <li data-translate="Miércoles: Conjuración Avanzada - 2:00 PM - 4:00 PM">Miércoles: Conjuración Avanzada - 2:00 PM - 4:00 PM</li>
+        <li data-translate="Viernes: Prácticas en Duelo - 3:00 PM - 5:00 PM">Viernes: Prácticas en Duelo - 3:00 PM - 5:00 PM</li>
+    </ul>
+</section>
+
+<section id="enlace-programas">
+    <h2 data-translate="Más Información de los Programas">Más Información de los Programas</h2>
+    <ul>
+        <li><a href="hechiceria.html" data-translate="Hechicería Avanzada">Hechicería Avanzada</a></li>
+        <li><a href="pociones.html" data-translate="Pociones">Pociones</a></li>
+        <li><a href="astronomia.html" data-translate="Astronomía">Astronomía</a></li>
+        <li><a href="defensa.html" data-translate="Defensa Contra las Artes Oscuras">Defensa Contra las Artes Oscuras</a></li>
+    </ul>
+</section>
+
+<section id="requisitos-admision">
+    <h2 data-translate="Requisitos de Admisión">Requisitos de Admisión</h2>
+    <ul>
+        <li data-translate="Formulario de solicitud completo.">Formulario de solicitud completo.</li>
+        <li data-translate="Ensayo personal explicando tu interés en la magia.">Ensayo personal explicando tu interés en la magia.</li>
+        <li data-translate="2 cartas de recomendación.">2 cartas de recomendación.</li>
+        <li data-translate="Evaluación preliminar de habilidades mágicas.">Evaluación preliminar de habilidades mágicas.</li>
+    </ul>
+</section>
+
+<section id="instructores">
+    <h2 data-translate="Instructores Destacados">Instructores Destacados</h2>
+    <div class="instructor">
+        <img src="albus.png" alt="Albus Dumbledore">
+        <h3 data-translate="Albus Dumbledore">Albus Dumbledore</h3>
+        <p data-translate="Especialista en magia avanzada y transfiguración. Ex-director de Hogwarts.">Especialista en magia avanzada y transfiguración. Ex-director de Hogwarts.</p>
+    </div>
+    <div class="instructor">
+        <img src="macgona.png" alt="Minerva McGonagall">
+        <h3 data-translate="Minerva McGonagall">Minerva McGonagall</h3>
+        <p data-translate="Profesora de Transfiguración y actual directora de Hogwarts.">Profesora de Transfiguración y actual directora de Hogwarts.</p>
+    </div>
+</section>
+
+<section id="blog-academico">
+    <h2 data-translate="Blog Académico">Blog Académico</h2>
+    <article>
+        <h3 data-translate="Cómo Prepararte para los Exámenes Finales">Cómo Prepararte para los Exámenes Finales</h3>
+        <p data-translate="Consejos de nuestros expertos para tener éxito en tus evaluaciones mágicas.">Consejos de nuestros expertos para tener éxito en tus evaluaciones mágicas.</p>
+    </article>
+    <article>
+        <h3 data-translate="Entrevista con el Profesor Flitwick">Entrevista con el Profesor Flitwick</h3>
+        <p data-translate="Conoce los secretos del arte del encantamiento de manos del maestro en la materia.">Conoce los secretos del arte del encantamiento de manos del maestro en la materia.</p>
+    </article>
+</section>
+
+
+<section id="biblioteca">
+    <h2 data-translate="Biblioteca en Línea">Biblioteca en Línea</h2>
+    <ul>
+        <li><a href="hechizos.pdf" download data-translate="Hechizos Ancestrales">Hechizos Ancestrales</a></li>
+        <li><a href="pociones.pdf" download data-translate="Pociones Curativas">Pociones Curativas</a></li>
+    </ul>
+    <button id="show-history" data-translate="Mostrar Historial de Descargas">Mostrar Historial de Descargas</button>
+    <button id="hide-history" data-translate="Ocultar Historial de Descargas">Ocultar Historial de Descargas</button>
+    <button id="clear-history" data-translate="Borrar Historial de Descargas">Borrar Historial de Descargas</button>
+    <ul id="download-history" style="display: none;"></ul>
+</section>
+
+<section id="centros-investigacion">
+    <h2 data-translate="Centros de Investigación Mágica">Centros de Investigación Mágica</h2>
+    <p data-translate="Hogwarts alberga varios centros de investigación dedicados al avance de la magia. Estos incluyen:">Hogwarts alberga varios centros de investigación dedicados al avance de la magia. Estos incluyen:</p>
+    <ul>
+        <li data-translate="Centro de Estudios sobre Magia Oscura">Centro de Estudios sobre Magia Oscura</li>
+        <li data-translate="Laboratorio de Pociones Experimentales">Laboratorio de Pociones Experimentales</li>
+        <li data-translate="Observatorio de Astronomía Mágica">Observatorio de Astronomía Mágica</li>
+    </ul>
+</section>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casas y Vida Estudiantil - Universidad Hogwarts</title>
+</head>
+<section id="casas">
+    <h2 data-translate="Las Casas de Hogwarts">Las Casas de Hogwarts</h2>
+    
+    <article class="casa gryffindor">
+        <img src="pngegg.png" alt="Escudo de Gryffindor" class="casa-imagen izquierda">
+        <h3 data-translate="Gryffindor">Gryffindor</h3>
+        <p data-translate="Valentía, coraje y determinación son los rasgos principales de los estudiantes de Gryffindor.">Valentía, coraje y determinación son los rasgos principales de los estudiantes de Gryffindor.</p>
+    </article>
+    
+    <article class="casa ravenclaw">
+        <img src="Ravenclaw.png" alt="Escudo de Ravenclaw" class="casa-imagen derecha">
+        <h3 data-translate="Ravenclaw">Ravenclaw</h3>
+        <p data-translate="Los estudiantes de Ravenclaw se caracterizan por su sabiduría, creatividad y amor por el aprendizaje.">Los estudiantes de Ravenclaw se caracterizan por su sabiduría, creatividad y amor por el aprendizaje.</p>
+    </article>
+    
+    <article class="casa hufflepuff">
+        <img src="huflepuff.png" alt="Escudo de Hufflepuff" class="casa-imagen izquierda">
+        <h3 data-translate="Hufflepuff">Hufflepuff</h3>
+        <p data-translate="Hufflepuff premia la lealtad, la paciencia y el trabajo duro de sus estudiantes.">Hufflepuff premia la lealtad, la paciencia y el trabajo duro de sus estudiantes.</p>
+    </article>
+    
+    <article class="casa slytherin">
+        <img src="Slytherin.png" alt="Escudo de Slytherin" class="casa-imagen derecha">
+        <h3 data-translate="Slytherin">Slytherin</h3>
+        <p data-translate="Ambición y astucia son las características predominantes de los alumnos de Slytherin.">Ambición y astucia son las características predominantes de los alumnos de Slytherin.</p>
+    </article>
+</section>
+
+<section id="puntos-casas">
+    <h2 data-translate="Tabla de Puntos por Casa">Tabla de Puntos por Casa</h2>
+    <table>
+        <thead>
+            <tr>
+                <th data-translate="Casa">Casa</th>
+                <th data-translate="Puntos Acumulados">Puntos Acumulados</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-translate="Gryffindor">Gryffindor</td>
+                <td><span id="puntos-gryffindor">0</span></td>
+            </tr>
+            <tr>
+                <td data-translate="Ravenclaw">Ravenclaw</td>
+                <td><span id="puntos-ravenclaw">0</span></td>
+            </tr>
+            <tr>
+                <td data-translate="Hufflepuff">Hufflepuff</td>
+                <td><span id="puntos-hufflepuff">0</span></td>
+            </tr>
+            <tr>
+                <td data-translate="Slytherin">Slytherin</td>
+                <td><span id="puntos-slytherin">0</span></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="sombrero-seleccionador">
+    <h2 id="titulo-test" data-translate="Test del Sombrero Seleccionador">Test del Sombrero Seleccionador</h2>
+    <p data-translate="Responde las preguntas para descubrir a qué casa perteneces:">Responde las preguntas para descubrir a qué casa perteneces:</p>
+    <button class="auth-buttons" id="comenzar-test" data-translate="Comenzar Test">Comenzar Test</button>
+    <div id="cuestionario" style="display:none;"></div>
+    <div id="resultado-casa" style="display:none;">
+        <h3>¡Felicidades! Perteneces a <span id="casa-asignada"></span></h3>
+    </div>
+</section>
+
+
+<section id="actividades">
+    <h2 data-translate="Actividades Extracurriculares">Actividades Extracurriculares</h2>
+    <ul>
+        <li data-translate="Club de Duelo">Club de Duelo</li>
+        <li data-translate="Equipo de Quidditch">Equipo de Quidditch</li>
+        <li data-translate="Orquesta de Magos">Orquesta de Magos</li>
+        <li data-translate="Teatro Mágico">Teatro Mágico</li>
+    </ul>
+</section>
+
+<section id="clubes">
+    <h2 data-translate="Clubes y Asociaciones">Clubes y Asociaciones</h2>
+    <ul>
+        <li data-translate="Club de Ajedrez Mágico">Club de Ajedrez Mágico</li>
+        <li data-translate="Sociedad de Estudios Oscuros">Sociedad de Estudios Oscuros</li>
+        <li data-translate="Club de Pociones Experimentales">Club de Pociones Experimentales</li>
+    </ul>
+</section>
+
+///
+
+<section id="galeria-eventos">
+    <h2 data-translate="Galería de Eventos">Galería de Eventos</h2>
+    <div class="galeria">
+        <img src="banquete.png" alt="Banquete en el Gran Comedor" loading="lazy">
+        <img src="quiditch.png" alt="Partido de Quidditch" loading="lazy">
+        <img src="duelo.png" alt="Competencia de Duelo" loading="lazy">
+    </div>
+</section>
+
+<section id="noticias">
+    <h2 data-translate="Noticias y Anuncios">Noticias y Anuncios</h2>
+    <article>
+        <h3 data-translate="Nueva Competencia de Duelo">Nueva Competencia de Duelo</h3>
+        <p data-translate="Este semestre se organizará una competencia de duelo entre casas. ¡Prepárate!">Este semestre se organizará una competencia de duelo entre casas. ¡Prepárate!</p>
+    </article>
+    <article>
+        <h3 data-translate="Quidditch: Inscripciones Abiertas">Quidditch: Inscripciones Abiertas</h3>
+        <p data-translate="El equipo de Quidditch busca nuevos jugadores. ¡Únete ahora!">El equipo de Quidditch busca nuevos jugadores. ¡Únete ahora!</p>
+    </article>
+</section>
+
+<section id="tienda">
+    <h2 data-translate="Tienda Oficial de Hogwarts">Tienda Oficial de Hogwarts</h2>
+    <ul>
+        <li data-translate="Bufanda de Gryffindor - 15 G">Bufanda de Gryffindor - 15 G</li>
+        <li data-translate="Varita Oficial de Ravenclaw - 20 G">Varita Oficial de Ravenclaw - 20 G</li>
+        <li data-translate="Sudadera de Slytherin - 30 G">Sudadera de Slytherin - 30 G</li>
+    </ul>
+</section>
+
+<section id="mapa-campus">
+    <h2 data-translate="Mapa del Campus">Mapa del Campus</h2>
+    <p data-translate="Explora el campus de Hogwarts:">Explora el campus de Hogwarts:</p>
+    <img src="mapa.jpg" alt="Mapa de Hogwarts" loading="lazy" id="mapa-hogwarts">
+
+    <div id="lista-lugares" style="display: none;">
+        <h3 data-translate="Lugares para visitar:">Lugares para visitar:</h3>
+        <ul>
+            <li><a href="#" class="hogsmeade-link" data-translate="Hogsmeade">Hogsmeade</a></li>
+            <li><a href="#" data-translate="Quidditch Pitch">Quidditch Pitch</a></li>
+            <li><a href="#" data-translate="Hagrid's Hut">Hagrid's Hut</a></li>
+            <li><a href="#" data-translate="Black Lake">Black Lake</a></li>
+            <li><a href="#" data-translate="Hogsmeade Station">Hogsmeade Station</a></li>
+            <li><a href="#" data-translate="Hogwarts School">Hogwarts School</a></li>
+            <li><a href="#" data-translate="Whomping Willow">Whomping Willow</a></li>
+            <li><a href="#" data-translate="Forbidden Forest">Forbidden Forest</a></li>
+            <li><a href="#" data-translate="The Owlery">The Owlery</a></li>
+        </ul>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="modal-iframe" class="modal-iframe"></iframe>
+        </div>
+    </div>
+</section>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Especiales - Universidad Hogwarts</title>
+</head>
+
+<section id="inscripcion-torneo">
+    <h2 data-translate="Inscripción al Torneo de los Tres Magos">Inscripción al Torneo de los Tres Magos</h2>
+    <p data-translate="¿Crees que tienes lo necesario para participar en uno de los torneos más desafiantes del mundo mágico? ¡Inscríbete aquí!">¿Crees que tienes lo necesario para participar en uno de los torneos más desafiantes del mundo mágico? ¡Inscríbete aquí!</p>
+    
+    <form id="form-torneo" aria-labelledby="inscripcion-torneo">
+        <fieldset>
+            <legend data-translate="Datos del Participante">Datos del Participante</legend>
+
+            <label for="nombre" data-translate="Nombre Completo:">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre completo"><br>
+
+            <label for="edad" data-translate="Edad:">Edad:</label>
+            <input type="number" id="edad" name="edad" min="17" required placeholder="17+ años"><br>
+
+            <label for="casa" data-translate="Casa:">Casa:</label>
+            <select id="casa" name="casa">
+                <option value="gryffindor" data-translate="Gryffindor">Gryffindor</option>
+                <option value="ravenclaw" data-translate="Ravenclaw">Ravenclaw</option>
+                <option value="hufflepuff" data-translate="Hufflepuff">Hufflepuff</option>
+                <option value="slytherin" data-translate="Slytherin">Slytherin</option>
+            </select><br>
+
+            <button type="submit" data-translate="Enviar Inscripción">Enviar Inscripción</button>
+        </fieldset>
+    </form>
+</section>
+
+<section id="agenda-torneo">
+    <h2 data-translate="Agenda del Torneo de los Tres Magos">Agenda del Torneo de los Tres Magos</h2>
+    <ul>
+        <li data-translate="Primera Prueba: 15 de Octubre - Bosque Prohibido">Primera Prueba: 15 de Octubre - Bosque Prohibido</li>
+        <li data-translate="Segunda Prueba: 5 de Noviembre - Lago Negro">Segunda Prueba: 5 de Noviembre - Lago Negro</li>
+        <li data-translate="Tercera Prueba: 20 de Noviembre - Laberinto Encantado">Tercera Prueba: 20 de Noviembre - Laberinto Encantado</li>
+    </ul>
+</section>
+
+<section id="galeria-gran-comedor">
+    <h2 data-translate="Galería del Gran Comedor">Galería del Gran Comedor</h2>
+    <div class="galeria">
+        <div class="lightbox">
+            <img src="banquete.png" alt="Gran comedor" title="Gran comedor 1967">
+            <div class="overlay">
+                <img src="banquete.png" alt="Gran comedor" title="Gran comedor 1967">
+            </div>
+        </div>
+        <div class="lightbox">
+            <img src="navidad.jpg" alt="Decoración de Navidad" title="Decoración de Navidad">
+            <div class="overlay">
+                <img src="navidad.jpg" alt="Decoración de Navidad" title="Decoración de Navidad">
+            </div>
+        </div>
+        <div class="lightbox">
+            <img src="hallowen.png" alt="Decoración de Halloween" title="Decoración de Halloween">
+            <div class="overlay">
+                <img src="hallowen.png" alt="Decoración de Halloween" title="Decoración de Halloween">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="encuesta-eventos">
+    <h2 data-translate="Encuesta de Retroalimentación">Encuesta de Retroalimentación</h2>
+    <form id="form-encuesta">
+        <label data-translate="¿Cuál fue tu evento favorito?">¿Cuál fue tu evento favorito?</label><br>
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="evento-favorito" value="torneo" required>
+                <span data-translate="Torneo de los Tres Magos">Torneo de los Tres Magos</span>
+            </label>
+            <label>
+                <input type="radio" name="evento-favorito" value="quidditch">
+                <span data-translate="Partidos de Quidditch">Partidos de Quidditch</span>
+            </label>
+            <label>
+                <input type="radio" name="evento-favorito" value="banquete">
+                <span data-translate="Banquete en el Gran Comedor">Banquete en el Gran Comedor</span>
+            </label>
+        </div><br>
+
+        <label for="comentarios" data-translate="Comentarios:">Comentarios:</label><br>
+        <textarea id="comentarios" rows="4" cols="50" placeholder="Comparte tus comentarios aquí..."></textarea><br>
+
+        <button type="submit" data-translate="Enviar Encuesta">Enviar Encuesta</button>
+    </form>
+</section>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Servicios - Universidad Hogwarts</title>
+</head>
+
+<section id="contacto">
+    <h2 data-translate="Contacto">Contacto</h2>
+    <p data-translate="¿Tienes alguna pregunta o sugerencia? Contáctanos a través del siguiente formulario:">¿Tienes alguna pregunta o sugerencia? Contáctanos a través del siguiente formulario:</p>
+    <form id="form-contacto">
+        <label for="nombre-contacto" data-translate="Nombre Completo:">Nombre Completo:</label>
+        <input type="text" id="nombre-contacto" name="nombre-contacto" required><br>
+    
+        <label for="email" data-translate="Correo Electrónico:">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required><br>
+    
+        <label for="mensaje" data-translate="Mensaje:">Mensaje:</label>
+        <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea><br>
+    
+        <button type="submit" data-translate="Enviar">Enviar</button>
+    </form>
+</section>
+
+<section id="preguntas-frecuentes">
+    <h2 data-translate="Preguntas Frecuentes">Preguntas Frecuentes</h2>
+    <div class="acordeon">
+        <div class="item">
+            <div class="titulo" data-translate="¿Cuáles son los requisitos para asistir a Hogwarts?">¿Cuáles son los requisitos para asistir a Hogwarts?</div>
+            <div class="contenido">
+                <p data-translate="Los requisitos incluyen recibir una carta de aceptación, tener al menos 11 años y contar con suministros adecuados para el primer año.">Los requisitos incluyen recibir una carta de aceptación, tener al menos 11 años y contar con suministros adecuados para el primer año.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="titulo" data-translate="¿Qué casas hay en Hogwarts?">¿Qué casas hay en Hogwarts?</div>
+            <div class="contenido">
+                <p data-translate="Hogwarts tiene cuatro casas: Gryffindor, Slytherin, Hufflepuff y Ravenclaw, cada una con sus propias características y valores.">Hogwarts tiene cuatro casas: Gryffindor, Slytherin, Hufflepuff y Ravenclaw, cada una con sus propias características y valores.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="titulo" data-translate="¿Qué tipo de clases se ofrecen en Hogwarts?">¿Qué tipo de clases se ofrecen en Hogwarts?</div>
+            <div class="contenido">
+                <p data-translate="Las clases incluyen Hechicería, Pociones, Defensa Contra las Artes Oscuras, y muchas más que preparan a los estudiantes para el mundo mágico.">Las clases incluyen Hechicería, Pociones, Defensa Contra las Artes Oscuras, y muchas más que preparan a los estudiantes para el mundo mágico.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="titulo" data-translate="¿Qué hago si no recibí mi carta de aceptación?">¿Qué hago si no recibí mi carta de aceptación?</div>
+            <div class="contenido">
+                <p data-translate="Si no has recibido tu carta, puedes contactar a la oficina de admisiones de Hogwarts o visitar el Callejón Diagon para más información.">Si no has recibido tu carta, puedes contactar a la oficina de admisiones de Hogwarts o visitar el Callejón Diagon para más información.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="titulo" data-translate="¿Cuáles son los horarios de las clases?">¿Cuáles son los horarios de las clases?</div>
+            <div class="contenido">
+                <p data-translate="Los horarios varían, pero generalmente las clases se llevan a cabo de lunes a viernes desde las 9:00 AM hasta las 4:00 PM.">Los horarios varían, pero generalmente las clases se llevan a cabo de lunes a viernes desde las 9:00 AM hasta las 4:00 PM.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="titulo" data-translate="¿Se permiten mascotas en Hogwarts?">¿Se permiten mascotas en Hogwarts?</div>
+            <div class="contenido">
+                <p data-translate="Sí, los estudiantes pueden traer una mascota, como un gato, un búho o una rata, siempre y cuando sean bien educados.">Sí, los estudiantes pueden traer una mascota, como un gato, un búho o una rata, siempre y cuando sean bien educados.</p>
+            </div>
+        </div>
+    </div>
+</section>
+      
+<section id="inscripcion">
+    <h2 data-translate="Inscripción en Línea">Inscripción en Línea</h2>
+    <form id="form-inscripcion">
+        <label for="nombre-inscripcion" data-translate="Nombre Completo:">Nombre Completo:</label>
+        <input type="text" id="nombre-inscripcion" name="nombre-inscripcion" required><br>
+    
+        <label for="programa" data-translate="Programa Académico:">Programa Académico:</label>
+        <select id="programa" name="programa" required>
+            <option value="hechiceria" data-translate="Hechicería">Hechicería</option>
+            <option value="pociones" data-translate="Pociones">Pociones</option>
+            <option value="defensa" data-translate="Defensa Contra las Artes Oscuras">Defensa Contra las Artes Oscuras</option>
+        </select><br>
+    
+        <label for="casa-preferencia" data-translate="Casa de Preferencia (opcional):">Casa de Preferencia (opcional):</label>
+        <input type="text" id="casa-preferencia" name="casa-preferencia"><br>
+    
+        <button type="submit" data-translate="Enviar Inscripción">Enviar Inscripción</button>
+    </form>
+</section>
+
+<section id="panel-estudiantes">
+    <h2 data-translate="Panel de Estudiantes">Panel de Estudiantes</h2>
+    <p data-translate="Accede a tus calificaciones y materiales de clase desde el panel de estudiantes:">Accede a tus calificaciones y materiales de clase desde el panel de estudiantes:</p>
+    <button type="button" onclick="abrirPanel()" data-translate="Acceder al Panel">Acceder al Panel</button>
+</section>
+
+<section id="terminos">
+    <h2 data-translate="Términos y Condiciones">Términos y Condiciones</h2>
+    <p data-translate="Al utilizar este portal, aceptas las políticas de Hogwarts y los términos de uso especificados.">Al utilizar este portal, aceptas las políticas de Hogwarts y los términos de uso especificados.</p>
+    <a href="https://www.pucp.edu.pe/terminos-y-condiciones/" target="_blank" rel="noopener noreferrer" data-translate="Leer términos completos">Leer términos completos</a>
+</section>
+
+<section id="personal-administrativo">
+    <h2 data-translate="Personal Administrativo">Personal Administrativo</h2>
+    <ul>
+        <li data-translate="Albus Dumbledore - Director">Albus Dumbledore - Director</li>
+        <li data-translate="Minerva McGonagall - Subdirectora">Minerva McGonagall - Subdirectora</li>
+        <li data-translate="Severus Snape - Jefe de Slytherin">Severus Snape - Jefe de Slytherin</li>
+    </ul>
+</section>
+
+<section id="horario-atencion">
+    <h2 data-translate="Horario de Atención">Horario de Atención</h2>
+    <table>
+        <thead>
+            <tr>
+                <th data-translate="Día">Día</th>
+                <th data-translate="Horario">Horario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-translate="Lunes a Viernes">Lunes a Viernes</td>
+                <td data-translate="8:00 AM - 4:00 PM">8:00 AM - 4:00 PM</td>
+            </tr>
+            <tr>
+                <td data-translate="Sábado">Sábado</td>
+                <td data-translate="9:00 AM - 1:00 PM">9:00 AM - 1:00 PM</td>
+            </tr>
+            <tr>
+                <td data-translate="Domingo">Domingo</td>
+                <td data-translate="Cerrado">Cerrado</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="servicios-emergencia">
+    <h2 data-translate="Servicios de Emergencia">Servicios de Emergencia</h2>
+    <p data-translate="En caso de emergencia, comunícate inmediatamente con:">En caso de emergencia, comunícate inmediatamente con:</p>
+    <ul>
+        <li data-translate="Enfermería de Hogwarts - Ext. 101">Enfermería de Hogwarts - Ext. 101</li>
+        <li data-translate="Ministerio de Magia - Línea de Emergencia Mágica">Ministerio de Magia - Línea de Emergencia Mágica</li>
+    </ul>
+</section>
+
+<section id="soporte-tecnico">
+    <h2 data-translate="Soporte Técnico">Soporte Técnico</h2>
+    <p data-translate="¿Tienes problemas con el portal? Reporta el problema aquí:">¿Tienes problemas con el portal? Reporta el problema aquí:</p>
+    <form id="form-soporte">
+        <label for="detalle-problema" data-translate="Descripción del Problema:">Descripción del Problema:</label>
+        <textarea id="detalle-problema" rows="4" placeholder="Describe el problema..." required></textarea><br>
+        <button type="submit" data-translate="Enviar Reporte">Enviar Reporte</button>
+    </form>
+</section>
+
+    
+<script src="script.js"></script>
+</body>
+</html>

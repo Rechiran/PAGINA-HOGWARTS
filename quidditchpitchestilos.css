@@ -1,0 +1,601 @@
+/* Parte 1: Estilos básicos y efectos de transición */
+
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Garamond', serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #004b87;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Título principal */
+h1 {
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px #333;
+}
+
+/* Estilo del contenedor principal */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideIn 0.8s forwards;
+}
+
+/* Secciones del contenido */
+section {
+    margin-bottom: 20px;
+    border-left: 5px solid #0077cc;
+    padding-left: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Títulos de las secciones */
+h2 {
+    color: #0077cc;
+    font-size: 2em;
+    margin-top: 0;
+    position: relative;
+}
+
+/* Efecto de subrayado en los títulos */
+h2:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 50%;
+    background: #ffcc00;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+h2:hover:after {
+    background: #ff9900;
+    width: 100%;
+}
+
+/* Estilo para los párrafos */
+p {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto de resaltado en los párrafos */
+p:hover {
+    background-color: #e6f7ff;
+}
+
+/* Listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #e6f7ff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones */
+button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #005fa3;
+    transform: scale(1.05);
+}
+
+/* Estilo del pie de página */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #777;
+    position: relative;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Estilos para el pie de página */
+footer p {
+    margin: 10px 0;
+}
+
+/* Efecto de parpadeo en el pie de página */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+footer p:hover {
+    animation: blink 1s infinite;
+}
+
+/* Efecto de desplazamiento para las listas */
+ul li {
+    transition: background-color 0.3s ease;
+}
+
+ul li:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+ul li:nth-child(even) {
+    background-color: #e0f7fa;
+}
+/* Parte 2: Estilos avanzados y efectos de interacción */
+
+/* Estilo para los enlaces */
+a {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: #005fa3;
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+}
+
+/* Efecto de animación en las secciones */
+section {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #0077cc;
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: background 0.3s ease;
+}
+
+section:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de sombra en el botón */
+button {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Estilo para imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Animación en las listas */
+ul li {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+ul li:hover {
+    transform: scale(1.02);
+    background-color: #b3e0ff;
+}
+
+/* Efecto de resaltado en la lista de equipos */
+ul {
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px dashed #0077cc;
+    border-radius: 10px;
+}
+
+ul:hover {
+    background-color: rgba(230, 230, 230, 0.5);
+}
+
+/* Estilo de las animaciones para los elementos de la lista */
+@keyframes listItemAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ul li {
+    animation: listItemAnimation 0.5s ease forwards;
+}
+
+/* Estilo de las imágenes en las secciones */
+section img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border: 3px solid #0077cc;
+    transition: border-color 0.3s ease;
+}
+
+section img:hover {
+    border-color: #ffcc00;
+}
+
+/* Transiciones en las secciones al hacer scroll */
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    opacity: 0;
+    animation: fadeInSection 1s forwards;
+}
+
+section:nth-child(even) {
+    animation-delay: 0.3s;
+}
+
+section:nth-child(odd) {
+    animation-delay: 0.6s;
+}
+
+/* Efecto de desplazamiento suave para el botón */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para los enlaces de navegación */
+nav {
+    background: #004b87;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 1.1em;
+}
+
+/* Efecto de parpadeo para los enlaces */
+nav a:hover {
+    animation: blink 1s infinite;
+}
+
+/* Estilos del pie de página */
+footer {
+    position: relative;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Animación de desplazamiento en el pie de página */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+footer {
+    animation: slideUp 1s ease forwards;
+}
+
+/* Estilo para las imágenes de fondo */
+body {
+    background-image: url('path/to/quidditch-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    z-index: -1;
+}
+
+/* Sombras en el contenedor principal */
+main {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Efecto de desplazamiento para las secciones */
+section {
+    transition: transform 0.5s;
+}
+
+section:hover {
+    transform: scale(1.02);
+}
+/* Parte 3: Estilos finales y efectos temáticos */
+
+/* Estilo para el encabezado del Quidditch */
+header {
+    background: linear-gradient(135deg, #004b87, #0077cc);
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 5px solid #ffcc00;
+}
+
+/* Títulos de las secciones con efectos de brillo */
+h2 {
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+    margin-bottom: 15px;
+}
+
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilos de animación para las listas de jugadores */
+ul.players {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ul.players li {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #0077cc;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+ul.players li:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 204, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo de las tablas de puntuación */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th {
+    background-color: #0077cc;
+    color: white;
+    padding: 15px;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #0077cc;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+td:hover {
+    background-color: rgba(230, 230, 230, 0.5);
+}
+
+/* Estilo para efectos de hover en el botón de volver */
+.back-button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.back-button:hover {
+    transform: scale(1.05);
+    background-color: #ff9900;
+}
+
+/* Efectos de transformación en el pie de página */
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-top: 5px solid #ffcc00;
+    text-align: center;
+}
+
+/* Animación para el pie de página */
+footer p {
+    animation: slideIn 0.5s ease-in;
+}
+
+/* Efecto de transiciones en las secciones */
+section {
+    transition: all 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: scale(1.01);
+}
+
+/* Efecto de fondo en las secciones */
+section:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+section:nth-child(odd) {
+    background-color: rgba(240, 240, 240, 0.9);
+}
+
+/* Estilo para el contenedor principal */
+main {
+    border: 3px solid #0077cc;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Efecto de sombra en los botones */
+button {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación para los botones */
+@keyframes buttonHover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:hover {
+    animation: buttonHover 0.3s ease-in-out;
+}
+
+/* Estilo para los fondos de las imágenes */
+img.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Efectos de parpadeo para elementos importantes */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+h2.highlight {
+    animation: blink 1.5s infinite;
+}
+
+/* Efectos en los elementos de formulario */
+input, textarea {
+    border: 2px solid #0077cc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #ffcc00;
+    outline: none;
+}
+
+/* Estilos de lista de reglas */
+.rules {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #0077cc;
+}
+
+.rules li {
+    margin: 5px 0;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border-left: 5px solid #ffcc00;
+    transition: transform 0.3s;
+}
+
+.rules li:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 204, 0.8);
+}

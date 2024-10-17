@@ -1,0 +1,301 @@
+/* Parte 1: Estilos generales y encabezado */
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Harry+Potter&display=swap');
+
+/* Estilo del body */
+body {
+    font-family: 'Harry Potter', cursive; /* Fuente temática */
+    margin: 0;
+    padding: 0;
+    background-image: url('background-hogwarts.jpg'); /* Fondo de Hogwarts */
+    background-size: cover; /* Cubrir toda la pantalla */
+    color: #f8f8f8; /* Color del texto claro para contraste */
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
+    color: #ffd700; /* Color dorado */
+    padding: 20px 0; /* Espaciado */
+    text-align: center; /* Centrar texto */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Sombra */
+    border-bottom: 2px solid #ffd700; /* Borde dorado en la parte inferior */
+}
+
+/* Estilo del título principal */
+h1 {
+    font-size: 4em; /* Tamaño grande */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra para profundidad */
+    margin: 0; /* Sin margen */
+    animation: fadeIn 2s ease-in; /* Animación de entrada */
+}
+
+/* Animación para el título */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos para el contenido principal */
+main {
+    padding: 30px; /* Espaciado interno */
+    max-width: 800px; /* Ancho máximo */
+    margin: 40px auto; /* Centrar horizontalmente */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7); /* Sombra intensa */
+    position: relative; /* Posición relativa */
+}
+
+/* Estilos para la sección de Hogsmeade */
+#hogsmeade {
+    text-align: left; /* Alinear texto a la izquierda */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo del subtítulo */
+h2 {
+    font-size: 3em; /* Tamaño grande */
+    color: #ffd700; /* Color dorado */
+    margin-top: 0; /* Sin margen superior */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Sombra */
+}
+
+/* Estilo del párrafo */
+p {
+    font-size: 1.5em; /* Tamaño de fuente grande */
+    line-height: 1.8; /* Altura de línea para mejor legibilidad */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-align: justify; /* Justificar texto */
+    color: #f5deb3; /* Color trigo para el texto */
+}
+
+/* Estilo para los encabezados de los lugares destacados */
+h3 {
+    font-size: 2.5em; /* Tamaño grande */
+    color: #8B4513; /* Color marrón */
+    margin-bottom: 10px; /* Espacio inferior */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Sombra */
+}
+
+/* Estilos para la lista de lugares */
+ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+li {
+    margin: 15px 0; /* Espaciado entre elementos */
+    font-size: 1.3em; /* Tamaño de fuente */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro semi-transparente */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre los elementos de la lista */
+li:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Color de fondo más claro */
+}
+
+/* Estilo del botón de regreso */
+.btn-regresar {
+    display: inline-block; /* Mostrar como bloque en línea */
+    background-color: #800000; /* Color burdeos */
+    color: #ffd700; /* Texto dorado */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    border: 2px solid #ffd700; /* Borde dorado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6); /* Sombra para el botón */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.btn-regresar:hover {
+    background-color: #ffd700; /* Color dorado al pasar el mouse */
+    color: #800000; /* Texto burdeos al pasar el mouse */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
+    color: #ffd700; /* Texto dorado */
+    text-align: center; /* Centrar texto */
+    padding: 15px 0; /* Espaciado interno */
+    position: relative; /* Posición relativa */
+    bottom: 0; /* Alinear al fondo */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilos de la impresión */
+@media print {
+    header, footer {
+        display: none; /* Ocultar encabezado y pie de página en impresión */
+    }
+    main {
+        background-color: #fff; /* Fondo blanco en impresión */
+        box-shadow: none; /* Sin sombra en impresión */
+    }
+}
+/* Parte 2: Estilos para elementos interactivos y visuales */
+
+/* Estilos para imágenes */
+img {
+    width: 100%; /* Ancho completo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra alrededor de las imágenes */
+    transition: transform 0.3s; /* Transición suave para transformaciones */
+}
+
+/* Efecto al pasar el mouse sobre las imágenes */
+img:hover {
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+/* Estilo para botones de navegación */
+nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Sombra */
+    padding: 10px; /* Espaciado interno */
+    position: fixed; /* Posicionamiento fijo */
+    top: 0; /* Alinear al fondo */
+    left: 0; /* Alinear a la izquierda */
+    width: 100%; /* Ancho completo */
+    z-index: 1000; /* Asegurar que esté encima de otros elementos */
+}
+
+/* Estilo de los enlaces de navegación */
+nav a {
+    color: #ffd700; /* Color dorado */
+    font-size: 1.2em; /* Tamaño de fuente */
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px; /* Espaciado interno */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre los enlaces de navegación */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo claro al pasar el mouse */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo para la lista de lugares destacados */
+ul.lugares-destacados {
+    padding: 20px; /* Espaciado interno */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 20px 0; /* Margen */
+}
+
+/* Estilo para cada lugar destacado */
+.lugar {
+    position: relative; /* Posición relativa */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro */
+    border: 1px solid #ffd700; /* Borde dorado */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 10px; /* Margen inferior */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+/* Efecto al pasar el mouse sobre cada lugar destacado */
+.lugar:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Color de fondo más claro */
+    transform: scale(1.02); /* Aumentar ligeramente el tamaño */
+}
+
+/* Estilo para los botones de acción */
+.btn {
+    background-color: #4B0082; /* Color indigo */
+    color: #ffd700; /* Texto dorado */
+    padding: 12px 25px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre los botones */
+.btn:hover {
+    background-color: #6A5ACD; /* Color indigo más claro */
+}
+
+/* Estilo de las secciones */
+section {
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilo de los formularios */
+form {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra */
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: calc(100% - 20px); /* Ancho completo menos padding */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #ffd700; /* Borde dorado */
+    margin-bottom: 15px; /* Espacio inferior */
+}
+
+/* Estilo de los campos de entrada en foco */
+input:focus,
+textarea:focus {
+    outline: none; /* Sin contorno */
+    border: 1px solid #4B0082; /* Borde indigo al enfocar */
+}
+
+/* Estilo de los botones de envío */
+input[type="submit"] {
+    background-color: #800000; /* Color burdeos */
+    color: #ffd700; /* Texto dorado */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambiar cursor al pasar */
+}
+
+/* Efecto al pasar el mouse sobre los botones de envío */
+input[type="submit"]:hover {
+    background-color: #a0522d; /* Color marrón al pasar */
+}
+
+/* Estilos para la sección de comentarios */
+.comments-section {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin-top: 20px; /* Margen superior */
+}
+
+/* Estilo para los comentarios */
+.comment {
+    margin-bottom: 15px; /* Margen inferior */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ffd700; /* Borde dorado */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro */
+}
+
+/* Estilo para el autor del comentario */
+.comment-author {
+    font-weight: bold; /* Texto en negrita */
+    color: #ffd700; /* Color dorado */
+}
+
+/* Estilo para la fecha del comentario */
+.comment-date {
+    font-size: 0.9em; /* Tamaño de fuente pequeño */
+    color: #f5deb3; /* Color trigo */
+}

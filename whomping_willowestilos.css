@@ -1,0 +1,282 @@
+/* Parte 1: Estilo base y animaciones mágicas */
+
+/* Estilo del body */
+body {
+    background: linear-gradient(to bottom, #e8f2f5, #a7d3e0);
+    font-family: 'Garamond', serif;
+    color: #4b4b4b;
+    margin: 0;
+    padding: 0;
+    animation: backgroundAnimation 30s infinite alternate;
+}
+
+/* Animación de fondo */
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #e8f2f5;
+    }
+    100% {
+        background-color: #a7d3e0;
+    }
+}
+
+/* Estilo del header */
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 3em;
+    animation: titleAnimation 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleAnimation {
+    0% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        text-shadow: 0 0 30px rgba(255, 215, 0, 1);
+    }
+}
+
+/* Estilo del contenido principal */
+.contenido {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border: 2px solid #b3cde0;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Secciones */
+section {
+    margin: 20px 0;
+    padding: 10px;
+    border-bottom: 2px dashed #b3cde0;
+}
+
+section h2 {
+    font-size: 2em;
+    color: #3b3b3b;
+    transition: color 0.3s ease;
+}
+
+section h2:hover {
+    color: #f1c40f;
+}
+
+/* Lista de características */
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+/* Estilo de las imágenes de la galería */
+.galeria {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.galeria img {
+    width: 32%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo del botón de regreso */
+.boton-regresar {
+    background-color: #4b9cd3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: buttonAnimation 2s ease-in-out infinite alternate;
+}
+
+.boton-regresar:hover {
+    background-color: #2b7abf;
+    transform: scale(1.05);
+}
+
+/* Animación del botón */
+@keyframes buttonAnimation {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+    }
+}
+
+/* Estilo del footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative;
+}
+
+/* Partículas */
+@keyframes particleAnimation {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #f1c40f;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: particleAnimation 3s linear infinite;
+}
+
+/* Generación de partículas */
+.particle:nth-child(odd) {
+    animation-duration: 4s;
+}
+
+.particle:nth-child(even) {
+    animation-duration: 5s;
+}
+
+/* Parte 2: Estilos adicionales y efectos mágicos */
+
+/* Estilos del cuerpo */
+body {
+    background: linear-gradient(to bottom, #e8f2f5, #a7d3e0);
+    position: relative;
+}
+
+/* Estilo del contenido principal */
+.contenido {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px; /* Limitar el ancho del contenido */
+}
+
+/* Estilos de los encabezados de sección */
+section h2 {
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+/* Mejora del estilo del h2 */
+section h2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: #f1c40f;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+section h2:hover::before {
+    transform: scaleX(1);
+}
+
+/* Mejoras para listas */
+ul {
+    padding-left: 20px;
+}
+
+/* Efecto para elementos de lista */
+ul li {
+    position: relative;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+/* Animaciones para imágenes de la galería */
+.galeria {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.galeria img {
+    width: 32%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto de hover en imágenes */
+.galeria img:hover {
+    transform: scale(1.1);
+}
+
+/* Efecto de botón */
+.boton-regresar {
+    background-color: #f1c40f;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-regresar:hover {
+    background-color: #e1b40e;
+}
+
+/* Estilo del footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-top: 3px solid #f1c40f;
+}
+
+/* Hover en footer */
+footer:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

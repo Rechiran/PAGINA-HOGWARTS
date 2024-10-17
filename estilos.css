@@ -1,0 +1,1478 @@
+/* Fuentes temáticas */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Uncial+Antiqua&display=swap');
+
+/* Estilo base del logo */
+.logo {
+    width: 150px; /* Tamaño del logo */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Transición suave */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el logo */
+}
+
+/* Efecto interactivo en hover */
+.logo:hover {
+    transform: rotate(10deg) scale(1.1); /* Rotación y escalado leve */
+    box-shadow: 0 0 20px 5px gold; /* Brillo dorado mágico */
+    filter: brightness(1.2); /* Efecto de brillo */
+}
+
+/* Efecto de rebote al hacer clic */
+.logo:active {
+    transform: scale(0.95); /* Efecto de pequeño rebote al hacer clic */
+}
+
+/* Barra de navegación fija y horizontal con tema de Harry Potter */
+.navbar {
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0;
+    width: 100%; /* Hace que ocupe el 100% del ancho de la pantalla */
+    background-color: #2c1b18; /* Fondo oscuro con tonalidad mágica */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    display: flex; /* Flexbox para mantener los elementos alineados en fila */
+    justify-content: center; /* Centra los enlaces */
+    padding: 15px 0; /* Espaciado vertical */
+    border-bottom: 3px solid gold; /* Línea dorada en la parte inferior */
+}
+
+/* Enlaces del menú principal */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinea los elementos en fila */
+}
+
+.nav-links li {
+    margin: 0 25px; /* Espaciado entre los enlaces */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: gold; /* Color dorado inspirado en los colores de Hogwarts */
+    padding: 8px 16px; /* Espaciado interno en los enlaces */
+    font-size: 18px;
+    font-family: 'Cinzel', serif; /* Fuente inspirada en el mundo mágico */
+    letter-spacing: 1.5px; /* Espaciado entre letras */
+    transition: background-color 0.4s ease, transform 0.4s ease; /* Efecto de transición */
+}
+
+.nav-links li a:hover {
+    background-color: #4a2c25; /* Cambia a un tono oscuro mágico al pasar el cursor */
+    border-radius: 5px; /* Bordes redondeados en hover */
+    transform: scale(1.05); /* Efecto de zoom leve */
+    box-shadow: 0 0 10px gold; /* Añade un brillo dorado al hover */
+}
+
+/* Contenedor del cambio de idioma */
+.language-switch {
+    display: flex;
+    justify-content: flex-end;
+    align-items:flex-start;
+    gap: 15px; /* Espacio entre los botones */
+    margin-right: 20px; /* Separación del borde */
+    margin-top: 30px; /* Desplazar hacia abajo */
+    width: 20%;
+}
+
+/* Estilo básico de los botones */
+.language-switch button {
+    background-color: transparent; /* Sin fondo para dejar visible la bandera */
+    border: 2px solid gold; /* Bordes dorados */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transición suave */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre la bandera y el texto */
+}
+
+/* Bandera e íconos personalizados dentro de los botones */
+.language-switch button img {
+    width: 24px; /* Tamaño de las banderas */
+    height: 24px;
+    border-radius: 5px; /* Un poco de redondeo en las banderas */
+    box-shadow: 0 0 5px rgba(25, 0, 255, 0.6); /* Efecto de luz dorada */
+}
+
+/* Estilo específico para el texto dentro del botón */
+.language-switch button span {
+    font-family: 'Cinzel', serif; /* Tipografía temática estilo Harry Potter */
+    color: rgb(0, 68, 255);
+    font-size: 16px;
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+/* Efecto mágico al pasar el cursor (hover) sobre el botón */
+.language-switch button:hover {
+    transform: scale(1.1); /* Agrandar levemente el botón */
+    box-shadow: 0 0 15px gold; /* Efecto de brillo dorado alrededor */
+}
+
+/* Efecto de clic mágico */
+.language-switch button:active {
+    transform: scale(0.95); /* Efecto de pequeño rebote al hacer clic */
+}
+
+/* Efecto específico cuando se selecciona un botón */
+.language-switch button.active {
+    background-color: gold; /* Fondo dorado cuando está activo */
+    color: black; /* Texto negro para resaltar */
+}
+/* Estilo para el menú hamburguesa en pantallas pequeñas */
+.hamburger-menu {
+    display: none; /* Oculto por defecto */
+}
+
+/* Estilo responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Oculta los enlaces en pantallas pequeñas */
+    }
+
+    .hamburger-menu {
+        display: block; /* Muestra el menú hamburguesa */
+        position: fixed;
+        right: 20px;
+        top: 10px;
+    }
+
+    .mobile-nav {
+        display: none; /* Oculto por defecto */
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #2c1b18;
+        width: 200px;
+        border: 2px solid gold; /* Borde dorado mágico */
+    }
+
+    #menu-toggle:checked + .mobile-nav {
+        display: block; /* Muestra el menú al marcar el checkbox */
+    }
+
+    .mobile-nav ul {
+        list-style: none;
+        padding: 10px;
+    }
+
+    .mobile-nav ul li {
+        margin: 10px 0;
+    }
+
+    .mobile-nav ul li a {
+        color: gold;
+        text-decoration: none;
+        padding: 8px 16px;
+        display: block;
+        font-family: 'Cinzel', serif;
+    }
+}
+
+/* Contenedor del submenú de casas */
+.auth-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-form {
+    display: none;
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.auth-form h2 {
+    text-align: center;
+}
+
+.auth-form input {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#logoutSection {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Estilo para los botones de sesión/registro */
+.auth-buttons button {
+    background-color: #4a2c25;
+    color: gold;
+    border: 2px solid gold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width:20%;
+}
+
+.auth-buttons button:hover {
+    background-color: gold;
+    color: #2c1b18;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px gold;
+}
+
+/* Estilo para el banner de cookies */
+.cookies-banner {
+    background-color: #4a2c25;
+    color: gold;
+    border-top: 3px solid gold;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+}
+
+.cookies-banner button {
+    background-color: gold;
+    color: #2c1b18;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cookies-banner button:hover {
+    background-color: #2c1b18;
+    color: gold;
+}
+
+/* Barra de búsqueda estilizada */
+.search-bar input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid gold;
+    font-family: 'Cinzel', serif;
+    background-color: #2c1b18;
+    color: gold;
+    margin-right: 5px;
+    width: 30%;
+    
+    ;
+}
+
+.search-bar button {
+    background-color: gold;
+    color: #2c1b18;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #4a2c25;
+    color: gold;
+}
+/* Contenedor principal del contador de visitas */
+.visit-counter {
+    position: fixed; /* Fijado en la parte superior */
+    top: 0;
+    left: 10%; /* Centrar horizontalmente */
+    transform: translateX(-50%);
+    background-color: rgba(26, 26, 26, 0.9); /* Fondo oscuro semitransparente */
+    border: 3px solid gold; /* Borde dorado mágico */
+    border-radius: 10px; /* Bordes redondeados para suavizar el diseño */
+    padding: 10px 20px;
+    color: gold;
+    font-family: 'Cinzel', serif; /* Fuente temática */
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 223, 0, 0.7); /* Resplandor dorado */
+    z-index: 1000; /* Asegurarse de que esté sobre otros elementos */
+    width: auto;
+    max-width: 300px; /* Tamaño limitado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo del texto que muestra las visitas */
+.visit-counter p {
+    margin: 0;
+    font-size: 16px;
+    color: white; /* Texto en blanco para contraste */
+}
+
+/* Estilo del número de visitas */
+.visit-counter #visit-count {
+    font-size: 22px;
+    font-weight: bold;
+    color: gold; /* Resaltado en dorado */
+    text-shadow: 0 0 5px rgba(255, 223, 0, 0.7), 0 0 10px rgba(255, 223, 0, 0.7);
+    transition: transform 0.3s ease; /* Transición para animación */
+}
+
+/* Efecto de animación al pasar el cursor */
+.visit-counter:hover #visit-count {
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño del número */
+    color: white; /* Cambia a blanco el color del número */
+    text-shadow: 0 0 10px gold, 0 0 20px gold; /* Brillo mágico */
+}
+
+/* Efecto de brillo mágico en el contador */
+@keyframes magical-glow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 223, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 223, 0, 0.9);
+    }
+}
+
+/* Aplicar el efecto de brillo al contador */
+.visit-counter {
+    animation: magical-glow 2s infinite ease-in-out;
+}
+/* Contenedor principal de los iconos de redes sociales */
+.social-media {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;
+    gap: 20px; /* Espacio entre los íconos */
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.8); /* Fondo oscuro */
+    border-top: 3px solid gold; /* Borde superior dorado */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5); /* Sombra hacia arriba */
+}
+
+/* Estilo básico de los íconos de redes sociales */
+.social-media a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Forma circular */
+    overflow: hidden; /* Esconder desbordes para la forma redonda */
+    background-color: gold; /* Fondo dorado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0 0 10px rgba(255, 223, 0, 0.6); /* Resplandor inicial */
+}
+
+/* Imagen dentro del ícono (icono de la red social) */
+.social-media a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+    transition: transform 0.3s ease; /* Transición de escala */
+}
+
+/* Animación al pasar el cursor (hover) sobre el ícono */
+.social-media a:hover {
+    transform: rotate(360deg) scale(1.2); /* Rotación completa y aumento de tamaño */
+    box-shadow: 0 0 20px gold, 0 0 30px rgba(255, 223, 0, 0.8); /* Resplandor mágico */
+}
+
+/* Imagen dentro del ícono al pasar el cursor */
+.social-media a:hover img {
+    transform: scale(1.1); /* Ligeramente aumenta el tamaño de la imagen */
+}
+
+/* Efecto de resplandor continuo para los íconos */
+@keyframes magical-glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 223, 0, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 223, 0, 0.9);
+    }
+}
+
+/* Aplicar resplandor mágico continuo a los íconos */
+.social-media a {
+    animation: magical-glow 3s infinite ease-in-out;
+}
+
+/* Ajuste de tamaño y centrado para dispositivos móviles */
+@media (max-width: 768px) {
+    .social-media {
+        gap: 15px; /* Reducir el espacio entre íconos */
+    }
+    
+    .social-media a {
+        width: 40px;
+        height: 40px; /* Reducir tamaño de los íconos */
+    }
+}
+
+/* General: Fondo y tipografía */
+body {
+    font-family: 'Cinzel', serif; /* Tipografía medieval para los títulos */
+    background-color: #1c1c1c; /* Fondo oscuro */
+    color: #f5f5f5; /* Texto claro */
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37; /* Dorado Hogwarts */
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+}
+
+/* Estilo para las secciones */
+section {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparencia para fondo */
+    border: 1px solid #d4af37; /* Borde dorado */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilo para los párrafos */
+p {
+    font-family: 'EB Garamond', serif; /* Estilo clásico de lectura */
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Estilo de las listas */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    margin: 10px 0;
+    border-left: 4px solid #d4af37; /* Borde dorado en cada item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateX(10px); /* Desplazamiento suave al pasar el cursor */
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.7); /* Efecto mágico */
+}
+
+/* Tabla en la sección de calendario */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #d4af37; /* Fondo dorado */
+    color: #1c1c1c; /* Texto oscuro */
+    text-transform: uppercase;
+}
+
+thead th {
+    padding: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+tbody tr {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #f5f5f5;
+    border-bottom: 1px solid #d4af37;
+}
+
+tbody tr:hover {
+    background-color: #d4af37; /* Dorado en hover */
+    color: #1c1c1c; /* Texto oscuro en hover */
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+}
+
+/* Estilo para el horario */
+#horarios-clases ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #333333;
+    border-left: 4px solid #d4af37;
+}
+
+/* Enlaces de programas académicos */
+#enlace-programas ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#enlace-programas ul li {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid #d4af37;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#enlace-programas ul li:hover {
+    transform: translateY(-5px); /* Elevar un poco en hover */
+    box-shadow: 0 8px 15px rgba(255, 223, 0, 0.6); /* Resplandor dorado */
+}
+
+#enlace-programas ul li a {
+    color: #d4af37;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Requisitos de admisión */
+#requisitos-admision ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #d4af37;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#requisitos-admision ul li:hover {
+    transform: translateX(10px);
+}
+
+/* Sección de instructores */
+#instructores {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.instructor {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instructor:hover {
+    transform: scale(1.05); /* Efecto de aumento en hover */
+    box-shadow: 0 8px 20px rgba(255, 223, 0, 0.8); /* Efecto de luz mágica */
+}
+
+.instructor img {
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.instructor:hover img {
+    transform: scale(1.1); /* Aumentar imagen del profesor en hover */
+}
+
+.instructor h3 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.instructor p {
+    font-family: 'EB Garamond', serif;
+    color: #f5f5f5;
+    font-size: 0.9em;
+}
+#inscripcion-torneo {
+    font-family: 'Cinzel', 'Uncial Antiqua', serif;
+    background-size: cover;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#inscripcion-torneo h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#inscripcion-torneo p {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#form-torneo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-torneo label {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+#form-torneo input, #form-torneo select {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+#form-torneo button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#form-torneo button:hover {
+    background-color: #ffaa00;
+}
+/* Estilos generales para la sección */
+#inscripcion-torneo {
+    background-color: #2c1b18; /* Color de fondo suave */
+    border: 2px solid #4b3c2d; /* Borde marrón oscuro */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Garamond', serif; /* Fuente con estilo antiguo */
+}
+
+/* Estilo para el título */
+#inscripcion-torneo h2 {
+    color: #ab1c4b; /* Color de texto para el título */
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+/* Estilo para los párrafos */
+#inscripcion-torneo p {
+    color: #fffdfd;
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+#form-torneo {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para las etiquetas y campos de entrada */
+#form-torneo label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#form-torneo input[type="text"],
+#form-torneo input[type="number"],
+#form-torneo select {
+    padding: 10px;
+    border: 1px solid #4b3c2d; /* Borde marrón oscuro */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+/* Estilos para el botón */
+#form-torneo button {
+    background-color: #4b3c2d; /* Color marrón oscuro */
+    color: #f7f2d0; /* Texto claro */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+#form-torneo button:hover {
+    background-color: #ab1c4b; /* Color al pasar el ratón */
+}
+
+/* Estilos para las opciones de casas */
+#form-torneo select option {
+    background-color: #fff; /* Fondo blanco para las opciones */
+    color: #4b3c2d; /* Texto marrón oscuro */
+}
+
+/* Estilos específicos para cada casa */
+#form-torneo select option[value="gryffindor"] {
+    background-color: #9b2235; /* Rojo Gryffindor */
+    color: #f7f2d0; /* Texto claro */
+}
+
+#form-torneo select option[value="ravenclaw"] {
+    background-color: #0e4a8d; /* Azul Ravenclaw */
+    color: #f7f2d0; /* Texto claro */
+}
+
+#form-torneo select option[value="hufflepuff"] {
+    background-color: #ecb939; /* Amarillo Hufflepuff */
+    color: #4b3c2d; /* Texto marrón oscuro */
+}
+
+#form-torneo select option[value="slytherin"] {
+    background-color: #2a6d4a; /* Verde Slytherin */
+    color: #f7f2d0; /* Texto claro */
+}
+/* Estilos para la sección de galería */
+#galeria-gran-comedor {
+    text-align: center; /* Centrar el texto y las imágenes */
+}
+
+/* Estilos para la galería */
+.galeria {
+    display: flex; /* Usar flexbox para alinear imágenes en fila */
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+    gap: 20px; /* Espacio entre las imágenes */
+    flex-wrap: wrap; /* Permitir que las imágenes se ajusten si hay más */
+}
+
+/* Estilo para las imágenes */
+.galeria img {
+    width: 300px; /* Ancho fijo para todas las imágenes */
+    height: 200px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegurarse de que las imágenes se recorten adecuadamente */
+    border-radius: 10px; /* Bordes redondeados */
+}
+/* Estilo para la sección de galería */
+#galeria-gran-comedor {
+    text-align: center; /* Centrar el texto y las imágenes */
+}
+
+/* Estilo para la galería */
+.galeria {
+    display: flex; /* Usar flexbox para alinear imágenes en fila */
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+    gap: 20px; /* Espacio entre las imágenes */
+}
+
+/* Estilo para el contenedor de lightbox */
+.lightbox {
+    position: relative; /* Para posicionar el overlay */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el contenedor */
+}
+
+.lightbox img {
+    width: 300px; /* Ancho fijo para todas las imágenes */
+    height: 200px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s; /* Suavizar la transición */
+}
+
+.lightbox:hover img {
+    transform: scale(1.1); /* Aumentar tamaño al pasar el ratón */
+}
+
+/* Estilo para el overlay (lightbox) */
+.overlay {
+    display: none; /* Ocultar el overlay por defecto */
+    position: fixed; /* Posicionar el overlay en la pantalla */
+    top: 0; /* Alinear arriba */
+    left: 0; /* Alinear a la izquierda */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    justify-content: center; /* Centrar la imagen en el overlay */
+    align-items: center; /* Centrar la imagen en el overlay */
+}
+
+/* Mostrar overlay al hacer clic */
+.lightbox:focus-within .overlay {
+    display: flex; /* Mostrar el overlay */
+}
+
+.overlay img {
+    width: 80%; /* Ajustar el tamaño de la imagen en el overlay */
+    height: auto; /* Mantener la proporción */
+    border-radius: 10px; /* Bordes redondeados */
+}
+/* Estilo general para el formulario */
+#inscripcion {
+    max-width: 400px; /* Limitar el ancho del formulario */
+    margin: auto; /* Centrar el formulario */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #444; /* Borde del formulario */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #444; /* Fondo claro */
+    font-family: 'Harry P', cursive; /* Fuente temática (si se incluye en el HTML) */
+    background-image: url('ruta/a/tu/fondo.jpg'); /* Fondo decorativo */
+    background-size: cover; /* Ajustar el fondo */
+}
+
+/* Estilo para todos los campos de entrada y select */
+input, select {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Espacio vertical */
+    border: 2px solid #ccc; /* Borde por defecto */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+}
+
+/* Estilo para los campos de entrada válidos */
+input:valid, select:valid {
+    border: 2px solid #7c9c2d; /* Borde verde para entradas válidas */
+}
+
+/* Estilo para los campos de entrada inválidos */
+input:invalid, select:invalid {
+    border: 2px solid #b22222; /* Borde rojo para entradas inválidas */
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #aaa; /* Color de los placeholders */
+}
+
+/* Estilo opcional para el botón */
+button {
+    margin-top: 10px; /* Espacio superior */
+    padding: 10px 15px; /* Espaciado interno */
+    background-color: #7c9c2d; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    width: 100%; /* Hacer que el botón también ocupe el ancho completo */
+}
+
+button:hover {
+    background-color: #6b8326; /* Color de fondo al pasar el ratón */
+}
+/* Estilo general para la sección de la encuesta */
+#encuesta-eventos {
+    max-width: 400px; /* Limitar el ancho de la sección */
+    margin: auto; /* Centrar la sección */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #444; /* Borde de la sección */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #2c1b18; /* Fondo claro */
+    font-family: 'Harry P', cursive; /* Fuente temática */
+    background-image: url('ruta/a/tu/fondo.jpg'); /* Fondo decorativo */
+    background-size: cover; /* Ajustar el fondo */
+}
+
+/* Estilo para el grupo de radio buttons */
+.radio-group {
+    display: flex;
+    flex-direction: column; /* Organizar verticalmente */
+}
+
+.radio-group label {
+    margin: 5px 0; /* Espacio entre las opciones */
+}
+
+/* Estilo para el textarea */
+textarea {
+    width: calc(100% - 20px);
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Espacio vertical */
+    border: 1px solid #ccc; /* Borde por defecto */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo para la barra de progreso */
+.progress-container {
+    width: 100%; /* Ancho completo */
+    background-color: #e0e0e0; /* Fondo de la barra */
+    border-radius: 5px; /* Bordes redondeados */
+    overflow: hidden; /* Evitar que el contenido sobresalga */
+    margin: 10px 0; /* Espacio vertical */
+}
+
+.progress-bar {
+    height: 10px; /* Altura de la barra */
+    background-color: #7c9c2d; /* Color de la barra */
+    transition: width 0.4s ease; /* Animación de ancho */
+}
+
+/* Estilo opcional para el botón */
+button {
+    margin-top: 10px; /* Espacio superior */
+    padding: 10px 15px; /* Espaciado interno */
+    background-color: #7c9c2d; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    width: 100%; /* Hacer que el botón ocupe el ancho completo */
+}
+
+button:hover {
+    background-color: #6b8326; /* Color de fondo al pasar el ratón */
+}
+/* Estilo general para la sección del horario */
+#horario-atencion {
+    max-width: 600px; /* Limitar el ancho de la sección */
+    margin: auto; /* Centrar la sección */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #444; /* Borde de la sección */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo claro */
+    font-family: 'Harry P', cursive; /* Fuente temática */
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsar bordes */
+    margin-top: 20px; /* Espacio superior */
+}
+
+/* Estilo de las celdas de la tabla */
+th, td {
+    padding: 10px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+    border: 1px solid #ccc; /* Borde de las celdas */
+}
+
+/* Estilo de los encabezados */
+th {
+    background-color: #7c9c2d; /* Color de fondo de los encabezados */
+    color: white; /* Color del texto */
+}
+
+/* Estilo de las filas de la tabla */
+tbody tr:nth-child(even) {
+    background-color: #444; /* Color de fondo de filas pares */
+}
+
+/* Estilo de los botones */
+button {
+    margin-top: 10px; /* Espacio superior */
+    padding: 10px 15px; /* Espaciado interno */
+    background-color: #7c9c2d; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    width: 100%; /* Hacer que el botón ocupe el ancho completo */
+}
+
+/* Estilo opcional para el botón al pasar el ratón */
+button:hover {
+    background-color: #6b8326; /* Color de fondo al pasar el ratón */
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    th, td {
+        font-size: 14px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+}
+/* Estilo general para la sección de preguntas frecuentes */
+#preguntas-frecuentes {
+    max-width: 600px; /* Limitar el ancho de la sección */
+    margin: auto; /* Centrar la sección */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #444; /* Borde de la sección */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #444; /* Fondo claro */
+    font-family: 'Harry P', cursive; /* Fuente temática */
+}
+
+/* Estilo del acordeón */
+.acordeon {
+    border: 1px solid #7c9c2d; /* Borde del acordeón */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo de los títulos del acordeón */
+.titulo {
+    background-color: gold; /* Color de fondo del título */
+    color: white; /* Color del texto */
+    padding: 15px; /* Espaciado interno */
+    cursor: pointer; /* Cambiar cursor al pasar */
+    border-top: 1px solid #444; /* Borde superior */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Estilo del contenido del acordeón */
+.contenido {
+    display: none; /* Ocultar contenido por defecto */
+    padding: 15px; /* Espaciado interno */
+    border-top: 1px solid #444; /* Borde superior */
+    background-color: #444; /* Color de fondo del contenido */
+}
+
+/* Efecto al pasar el mouse sobre el título */
+.titulo:hover {
+    background-color: #6b8326; /* Color de fondo al pasar el ratón */
+}
+/* Estilo general para la sección de casas */
+#casas {
+    background-color:  #691212; /* Fondo rojo característico de Harry Potter */
+    color: white; /* Texto blanco */
+    padding: 20px; /* Espaciado interno */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Incluye el padding en el ancho */
+}
+
+/* Estilo para cada casa */
+.casa {
+    display: flex; /* Utiliza Flexbox para alinear los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 20px; /* Espacio entre secciones */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil para las casas */
+}
+
+/* Estilo para las imágenes de cada casa */
+.casa-imagen {
+    width: 150px; /* Ancho fijo para las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    margin-right: 15px; /* Espacio entre la imagen y el texto */
+}
+
+/* Alternar la posición de las imágenes */
+.izquierda {
+    order: -1; /* Mueve la imagen a la izquierda */
+}
+
+.derecha {
+    order: 1; /* Mantiene la imagen a la derecha */
+}
+
+/* Estilo para los encabezados de cada casa */
+h3 {
+    color: #FFD700; /* Color amarillo para los títulos */
+    margin: 0; /* Elimina márgenes para una mejor alineación */
+}
+
+/* Estilo para el texto de cada casa */
+p {
+    margin: 0; /* Elimina márgenes para un espaciado uniforme */
+    padding-left: 10px; /* Espacio a la izquierda para separar del borde */
+}
+#mapa-campus {
+    position: relative; /* Para posicionar elementos hijos */
+    text-align: center; /* Centrar texto */
+    padding: 50px; /* Espaciado interno */
+    background-color: #f0e68c; /* Color de fondo */
+    font-family: 'Harry Potter', sans-serif; /* Fuente temática */
+}
+
+/* Estilo del título del mapa */
+#mapa-campus h2 {
+    font-size: 3em; /* Tamaño de fuente grande */
+    color: #800000; /* Color burdeos */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilo del párrafo de introducción */
+#mapa-campus p {
+    font-size: 1.5em; /* Tamaño de fuente mediano */
+    color: #333; /* Color del texto */
+    margin-bottom: 40px; /* Espacio inferior */
+}
+
+/* Estilo de la imagen del mapa */
+#mapa-campus img {
+    max-width: 100%; /* Ajuste al ancho máximo */
+    height: auto; /* Mantener proporción */
+    border: 5px solid #A52A2A; /* Borde marrón */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para la imagen */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    transition: transform 0.3s; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre la imagen */
+#mapa-campus img:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+/* Estilos para la lista de lugares */
+#lista-lugares {
+    position: absolute; /* Posición absoluta para superponer sobre la imagen */
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar el centro */
+    padding: 20px;
+    border: 3px solid #A52A2A; /* Color del borde estilo madera */
+    background-color: rgba(255, 248, 220, 0.9); /* Fondo semi-transparente */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+    font-family: 'Harry Potter', sans-serif; /* Fuente con temática */
+    display: none; /* Inicialmente oculto */
+    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+/* Estilo del título de la lista */
+#lista-lugares h3 {
+    color: #800000; /* Color oscuro para el título */
+    margin-bottom: 15px;
+    text-align: center; /* Centrar el título */
+    font-size: 2em; /* Tamaño de fuente más grande */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+}
+
+/* Estilo de la lista sin viñetas */
+#lista-lugares ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margin */
+}
+
+/* Estilo de los elementos de la lista */
+#lista-lugares li {
+    margin: 15px 0; /* Espaciado entre elementos */
+    text-align: center; /* Centrar los elementos */
+}
+
+/* Estilo de los enlaces en la lista */
+#lista-lugares a {
+    text-decoration: none; /* Sin subrayado */
+    color: #A52A2A; /* Color del enlace estilo madera */
+    font-weight: bold; /* Negrita */
+    font-size: 1.5em; /* Tamaño de fuente más grande */
+    padding: 10px 20px; /* Espaciado interno */
+    border: 2px solid #8B4513; /* Borde para los enlaces */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+    position: relative; /* Posición relativa para efectos */
+    display: inline-block; /* Para que el padding funcione correctamente */
+}
+
+/* Efecto al pasar el mouse sobre los enlaces */
+#lista-lugares a:hover {
+    background-color: #8B4513; /* Color de fondo al pasar el mouse */
+    color: #FFF; /* Color del texto al pasar el mouse */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para el texto al pasar el mouse */
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+}
+
+/* Animaciones para la lista */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comenzar oculto */
+    }
+    to {
+        opacity: 1; /* Finalizar visible */
+    }
+}
+
+/* Clase para aplicar la animación de entrada */
+.fade-in {
+    animation: fadeIn 0.5s; /* Animación de desvanecimiento */
+}
+
+/* Estilo de las etiquetas de enlace */
+#lista-lugares a::after {
+    content: ""; /* Espacio adicional para el efecto */
+    display: block;
+    width: 100%;
+    height: 3px; /* Espesor de la línea */
+    background: #FFD700; /* Color dorado */
+    transition: transform 0.3s; /* Transición suave */
+    transform: scaleX(0); /* Comienza en 0 */
+}
+
+/* Efecto al pasar el mouse sobre los enlaces - línea dorada */
+#lista-lugares a:hover::after {
+    transform: scaleX(1); /* Expande la línea dorada */
+}
+
+/* Efecto de entrada de la lista */
+#lista-lugares.show {
+    display: block; /* Mostrar la lista */
+    animation: fadeIn 0.5s; /* Aplicar animación */
+}
+
+/* Diseño de impresión */
+@media print {
+    #lista-lugares {
+        display: none; /* Ocultar la lista en la impresión */
+    }
+}
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed; /* Posicionamiento fijo */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    left: 50%; /* Céntrala horizontalmente */
+    top: 50%; /* Céntrala verticalmente */
+    transform: translate(-50%, -50%); /* Ajustar el desplazamiento para centrar */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    overflow: hidden; /* Evitar el desbordamiento */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    width: 80vw; /* Ancho de la modal en porcentaje */
+    height: 80vh; /* Altura de la modal en porcentaje */
+}
+
+/* Ajustes para el contenido de la modal */
+.modal-content {
+    position: relative; /* Posicionamiento relativo para elementos hijos */
+    width: 100%; /* Ancho total */
+    height: 100%; /* Altura total */
+}
+
+/* Estilos para el iframe */
+.modal-iframe {
+    width: 100%; /* Ancho total del iframe */
+    height: 100%; /* Altura total del iframe */
+    border: none; /* Sin borde */
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.submenu-houses {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.submenu-houses ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu-houses li {
+    list-style: none;
+}
+
+/* Estilo base para todas las tarjetas de las casas */
+.house-card {
+    width: 250px;
+    height: 300px;
+    background: white;
+    border-radius: 32px;
+    padding: 3px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 70px 30px -50px;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Al hacer hover, la imagen se moverá hacia una esquina */
+.house-card:hover .profile-pic {
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.house-card:hover .profile-pic img {
+    transform: scale(0.8);
+}
+
+/* Personalización de cada casa de Hogwarts */
+
+/* Gryffindor */
+.house-card.gryffindor {
+    background-color: #7F0909;
+    border: 3px solid #D3A625;
+}
+
+.house-card.gryffindor:hover {
+    box-shadow: 0 0 20px rgba(211, 166, 37, 0.7);
+}
+
+.house-card.gryffindor .content {
+    color: #D3A625; /* Texto dorado sobre fondo rojo */
+}
+
+/* Hufflepuff */
+.house-card.hufflepuff {
+    background-color: #bd971d;
+    border: 3px solid #60605E;
+}
+
+.house-card.hufflepuff:hover {
+    box-shadow: 0 0 20px rgba(96, 96, 94, 0.7);
+}
+
+.house-card.hufflepuff .content {
+    color: #60605E; /* Texto gris oscuro sobre fondo amarillo */
+}
+
+/* Ravenclaw */
+.house-card.ravenclaw {
+    background-color: #0E1A40;
+    border: 3px solid #946B2D;
+}
+
+.house-card.ravenclaw:hover {
+    box-shadow: 0 0 20px rgba(148, 107, 45, 0.7);
+}
+
+.house-card.ravenclaw .content {
+    color: #946B2D; /* Texto bronce sobre fondo azul oscuro */
+}
+
+/* Slytherin */
+.house-card.slytherin {
+    background-color: #1A472A;
+    border: 3px solid #AAAAAA;
+}
+
+.house-card.slytherin:hover {
+    box-shadow: 0 0 20px rgba(170, 170, 170, 0.7);
+}
+
+.house-card.slytherin .content {
+    color: #AAAAAA; /* Texto plateado sobre fondo verde oscuro */
+}
+
+/* Estilo para el perfil (escudo de la casa) - imagen inicialmente cubre todo */
+.house-card .profile-pic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.house-card .profile-pic img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Estilo para el contenido (nombre de la casa y texto) */
+.house-card .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.house-card:hover .content {
+    opacity: 1;
+}
+
+.house-card .content p {
+    margin: 15px 20px; /* Espaciado alrededor del texto para que no toque los bordes */
+    font-size: 1rem;
+    font-family: 'Uncial Antiqua', cursive; /* Tipografía temática medieval */
+    text-align: center;
+    line-height: 1.4;
+    color: #f0e68c; /* Color dorado claro para el texto adicional */
+}
+/* Estilos para la modal */
+
+#retroalimentacion {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro translúcido */
+    color: #FFD700; /* Color dorado para resaltar */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Sección Contacto */
+#contacto {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro translúcido */
+    color: #FFD700; /* Color dorado */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Sección Soporte Técnico */
+#soporte-tecnico {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+    color: #FFFFFF; /* Color de texto blanco */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Sección Servicios de Emergencia */
+#servicios-emergencia {
+    background-color: #800000; /* Fondo color burdeos */
+    color: #FFFFFF; /* Texto blanco */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Botones de todas las secciones */
+button {
+    background-color: #FFD700; /* Fondo dorado */
+    color: #000; /* Texto negro */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFC107; /* Color de fondo en hover */
+    color: #000;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabaña de Hagrid</title>
+  <link rel="stylesheet" href="hagrid_hutestilos.css">
+</head>
+<body>
+  <header>
+    <h1>La Cabaña de Hagrid</h1>
+    <p>Un rincón acogedor en los terrenos de Hogwarts, donde siempre hay una taza de té y una historia esperando.</p>
+  </header>
+
+  <main>
+    <section id="descripcion">
+      <h2>Descripción del lugar</h2>
+      <p>
+        La cabaña de Hagrid se encuentra en el límite del Bosque Prohibido, un lugar fascinante y lleno de criaturas mágicas. 
+        Esta construcción rústica, hecha de piedra, es el hogar de <strong>Rubeus Hagrid</strong>, el guardián de las llaves y terrenos de Hogwarts, 
+        y profesor de Cuidado de Criaturas Mágicas. Dentro de esta pequeña cabaña, siempre encontrarás una gran chimenea encendida 
+        y posiblemente algunas criaturas mágicas inusuales de compañía.
+      </p>
+      <img src="hagrid_hut.jpg" alt="Cabaña de Hagrid" style="max-width: 100%; height: auto; margin: 20px 0;">
+
+      <h3>¿Qué esperar en la cabaña?</h3>
+      <ul>
+        <li>Té y bizcochos (aunque los bizcochos pueden ser un poco duros).</li>
+        <li>Aventuras inesperadas con criaturas mágicas.</li>
+        <li>Historias sobre la crianza de dragones o criaturas del bosque.</li>
+        <li>El fiel perro de Hagrid, <em>Fang</em>, siempre estará cerca para darte la bienvenida.</li>
+      </ul>
+    </section>
+
+    <section id="actividades">
+      <h2>Actividades cerca de la cabaña</h2>
+      <p>
+        Desde la cabaña, tienes acceso directo al <strong>Bosque Prohibido</strong> y vistas del <strong>Lago Negro</strong>. 
+        A menudo, Hagrid lleva a los estudiantes en excursiones para conocer algunas criaturas fascinantes, como hipogrifos o unicornios. 
+      </p>
+      <ul>
+        <li>Excursión al Bosque Prohibido (¡cuidado con las arañas gigantes!).</li>
+        <li>Paseos alrededor del Lago Negro para observar sirenas y grindylows.</li>
+        <li>Cuidado y alimentación de criaturas mágicas en las clases de Hagrid.</li>
+      </ul>
+    </section>
+
+    <button id="volver-mapa" onclick="volverAlMapa()">⬅️ Volver al Mapa de Hogwarts</button>
+  </main>
+
+  <footer>
+    <p>© 2024 Hogwarts School of Witchcraft and Wizardry. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function volverAlMapa() {
+      window.location.href = "hogwarts.html"; // Redirige al mapa de Hogwarts
+    }
+  </script>
+</body>
+</html>

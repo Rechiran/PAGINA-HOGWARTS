@@ -1,0 +1,328 @@
+/* Parte 1: Estilos Generales */
+
+body {
+    font-family: 'Garamond', serif; /* Fuente clásica */
+    background-color: #f0f0f0; /* Fondo claro para contraste */
+    color: #3e3e3e; /* Color de texto */
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    background-color: #4b3d24; /* Marrón oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Títulos principales */
+h1 {
+    font-size: 3em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Estilos de sección */
+section {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff; /* Fondo blanco para secciones */
+    max-width: 800px; /* Ancho máximo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Títulos de sección */
+h2 {
+    font-size: 2.5em;
+    color: #4b3d24; /* Marrón oscuro */
+    border-bottom: 2px solid #d1a95e; /* Línea dorada */
+    padding-bottom: 10px;
+}
+
+/* Títulos de sub-sección */
+h3 {
+    font-size: 2em;
+    color: #6a4e3d; /* Marrón más claro */
+    margin-top: 15px;
+}
+
+/* Texto de párrafo */
+p {
+    line-height: 1.6; /* Espaciado entre líneas */
+    font-size: 1.1em;
+}
+
+/* Listas */
+ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 5px; /* Espaciado entre elementos de lista */
+}
+
+/* Citas */
+blockquote {
+    font-style: italic; /* Estilo en cursiva */
+    color: #6a4e3d; /* Color de texto de las citas */
+    border-left: 4px solid #d1a95e; /* Línea dorada a la izquierda */
+    padding-left: 20px; /* Espaciado interno */
+    margin: 10px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilo de pie de página */
+footer {
+    background-color: #4b3d24; /* Fondo marrón oscuro */
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Botones */
+input[type="submit"] {
+    background-color: #d1a95e; /* Color dorado */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s; /* Transición para hover */
+}
+
+input[type="submit"]:hover {
+    background-color: #b57e4d; /* Color dorado más oscuro */
+}
+
+/* Efectos de hover en enlaces */
+a {
+    color: #4b3d24; /* Color de enlace marrón oscuro */
+    text-decoration: none; /* Sin subrayado */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+/* Parte 2: Estilos adicionales y efectos visuales */
+
+/* Estilo del fondo de la página */
+body {
+    background-image: url('https://example.com/your-background-image.jpg'); /* Reemplaza con una URL de imagen de fondo temática */
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-repeat: no-repeat; /* Sin repetición de la imagen */
+}
+
+/* Estilo de las secciones con un fondo sutil */
+section {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    border-radius: 10px;
+    padding: 30px; /* Espaciado interno aumentado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Estilo de los encabezados de las secciones */
+h2, h3 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+}
+
+/* Estilo de enlaces dentro de las secciones */
+section a {
+    color: #d1a95e; /* Color dorado para enlaces dentro de secciones */
+    font-weight: bold; /* Negrita para destacar */
+}
+
+section a:hover {
+    color: #b57e4d; /* Color dorado más oscuro al pasar el ratón */
+}
+
+/* Estilo para listas */
+ul {
+    list-style-type: square; /* Marcadores cuadrados */
+    padding-left: 20px; /* Espaciado izquierdo */
+}
+
+li {
+    margin-bottom: 10px; /* Espaciado entre elementos de lista aumentado */
+}
+
+/* Efecto en bloques de citas */
+blockquote {
+    border-left: 4px solid #d1a95e; /* Línea dorada a la izquierda */
+    margin: 10px 0;
+    padding-left: 15px; /* Espaciado interno aumentado */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+}
+
+/* Estilo para imágenes */
+img {
+    max-width: 100%; /* Asegura que las imágenes no se desborden */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 10px; /* Bordes redondeados para imágenes */
+}
+
+/* Estilo para el pie de página */
+footer {
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+}
+
+/* Estilo de los botones en formularios */
+input[type="submit"] {
+    background-color: #d1a95e; /* Color dorado */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+input[type="submit"]:hover {
+    background-color: #b57e4d; /* Color dorado más oscuro */
+}
+
+/* Animación para efectos de carga */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    animation: fadeIn 1s ease; /* Efecto de aparición para el contenido */
+}
+
+/* Estilos de formularios */
+form {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Etiquetas de formulario */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* Etiquetas en negrita */
+}
+
+/* Campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px;
+    border: 1px solid #d1a95e; /* Borde dorado */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Estilo para área de texto */
+textarea {
+    resize: vertical; /* Permitir solo redimensionamiento vertical */
+}
+/* Parte 3: Estilos finales y responsividad */
+
+/* Estilo para el contenedor principal */
+main {
+    padding: 20px; /* Espaciado interior */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: auto; /* Centrar el contenedor */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em; /* Reducir tamaño del encabezado principal */
+    }
+
+    h2 {
+        font-size: 2em; /* Reducir tamaño de los encabezados de sección */
+    }
+
+    h3 {
+        font-size: 1.8em; /* Reducir tamaño de los encabezados de sub-sección */
+    }
+
+    section {
+        padding: 15px; /* Reducir espaciado interno */
+    }
+
+    input[type="submit"] {
+        width: 100%; /* Botones de ancho completo en móviles */
+    }
+}
+
+/* Estilos para tablas */
+table {
+    width: 100%; /* Ancho completo para tablas */
+    border-collapse: collapse; /* Eliminar espacios entre celdas */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+th, td {
+    border: 1px solid #d1a95e; /* Borde dorado */
+    padding: 10px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+th {
+    background-color: #4b3d24; /* Fondo marrón oscuro para encabezados */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Estilo para resaltados */
+.highlight {
+    background-color: #d1a95e; /* Color dorado */
+    color: #4b3d24; /* Texto marrón oscuro */
+    padding: 5px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo de transiciones suaves para cambios */
+* {
+    transition: all 0.3s ease; /* Transiciones suaves para todos los elementos */
+}
+
+/* Ajustes de margenes y padding para ciertos elementos */
+p, ul, blockquote {
+    margin-bottom: 15px; /* Espaciado inferior para párrafos y listas */
+}
+
+/* Estilos de alerta */
+.alert {
+    background-color: #ffcccc; /* Fondo rojo claro */
+    color: #a94442; /* Texto rojo oscuro */
+    border: 1px solid #f5c6cb; /* Borde rosa */
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilos de advertencia */
+.warning {
+    background-color: #ffeeba; /* Fondo amarillo claro */
+    color: #856404; /* Texto amarillo oscuro */
+    border: 1px solid #ffeeba; /* Borde amarillo */
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilos de éxito */
+.success {
+    background-color: #d4edda; /* Fondo verde claro */
+    color: #155724; /* Texto verde oscuro */
+    border: 1px solid #c3e6cb; /* Borde verde */
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0; /* Espaciado superior e inferior */
+}

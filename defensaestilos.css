@@ -1,0 +1,784 @@
+/* Parte 1: Estilos básicos y estructura */
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almendra+Display&display=swap');
+
+/* Estilo general */
+body {
+    font-family: 'Garamond', serif; /* Tipografía clásica */
+    background-color: #f7f7f7; /* Fondo claro para un contraste suave */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Color del texto */
+}
+
+/* Encabezado */
+header {
+    background-color: #6f3c3b; /* Color del encabezado */
+    color: #fff; /* Texto blanco para el encabezado */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #c0a16c; /* Borde dorado inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+/* Títulos principales */
+h1 {
+    font-size: 3.5em; /* Tamaño grande para el título principal */
+    margin: 0; /* Sin margen */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para efecto mágico */
+    font-family: 'Almendra Display', cursive; /* Fuente decorativa para títulos */
+}
+
+/* Contenido principal */
+main {
+    padding: 20px; /* Espacio alrededor del contenido principal */
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: 0 auto; /* Centrar el contenido */
+    background: linear-gradient(to bottom, #f7f7f7, #ffffff); /* Degradado suave */
+}
+
+/* Secciones */
+section {
+    margin-bottom: 40px; /* Espacio entre secciones */
+    padding: 15px;
+    border: 2px solid #6f3c3b; /* Borde marrón para las secciones */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco para secciones */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de sección */
+    transition: transform 0.3s; /* Transición para efectos */
+}
+
+/* Efecto al pasar el ratón sobre secciones */
+section:hover {
+    transform: translateY(-5px); /* Elevar la sección al pasar el ratón */
+}
+
+/* Títulos de sección */
+h2 {
+    font-size: 2.5em; /* Tamaño de subtítulos */
+    color: #6f3c3b; /* Color marrón */
+    margin-bottom: 10px; /* Espacio inferior */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    border-bottom: 2px solid #c0a16c; /* Borde dorado inferior */
+    padding-bottom: 5px; /* Espacio inferior */
+}
+
+/* Subtítulos secundarios */
+h3 {
+    font-size: 2em; /* Tamaño para subtítulos secundarios */
+    color: #3b2c2c; /* Color más oscuro para subtítulos */
+    margin-bottom: 5px; /* Espacio inferior */
+}
+
+/* Párrafos */
+p {
+    line-height: 1.6; /* Espaciado de línea para mejor lectura */
+    margin-bottom: 20px; /* Espacio inferior entre párrafos */
+    font-size: 1.1em; /* Tamaño de fuente */
+}
+
+/* Listas */
+ul {
+    margin-left: 20px; /* Sangría para listas */
+    list-style-type: disc; /* Estilo de lista */
+}
+
+ul li {
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #6f3c3b; /* Color del pie de página */
+    color: #fff; /* Texto blanco */
+    text-align: center;
+    padding: 15px 0; /* Espacio arriba y abajo */
+    position: relative; /* Para posicionar el pie */
+    bottom: 0; /* Mantener el pie en la parte inferior */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilos de enlaces */
+a {
+    color: #c0a16c; /* Color dorado para enlaces */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s; /* Transición de color al pasar el ratón */
+}
+
+a:hover {
+    color: #6f3c3b; /* Color marrón oscuro al pasar el ratón */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2.5em; /* Ajustar tamaño de título en móviles */
+    }
+    main {
+        padding: 10px; /* Reducir padding en móviles */
+    }
+    section {
+        padding: 10px; /* Reducir padding de secciones en móviles */
+    }
+    h2 {
+        font-size: 2em; /* Ajustar subtítulos en móviles */
+    }
+    h3 {
+        font-size: 1.5em; /* Ajustar subtítulos secundarios en móviles */
+    }
+}
+/* Parte 2: Estilos adicionales y efectos mágicos */
+
+/* Estilo para encabezados */
+header h1 {
+    font-family: 'Almendra Display', cursive; /* Fuente decorativa para títulos */
+    text-transform: uppercase; /* Títulos en mayúsculas */
+}
+
+/* Efecto de parpadeo para títulos */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+h1 {
+    animation: blink 1.5s infinite; /* Efecto de parpadeo en el título */
+}
+
+/* Estilo para secciones especiales */
+.special-section {
+    background-color: #eae5d7; /* Color de fondo suave */
+    border: 2px dashed #c0a16c; /* Borde punteado dorado */
+    padding: 20px; /* Espacio interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Sombra */
+}
+
+/* Estilo para imágenes */
+img {
+    max-width: 100%; /* Hacer que las imágenes sean responsivas */
+    height: auto; /* Mantener la proporción de las imágenes */
+    border-radius: 10px; /* Bordes redondeados para imágenes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para imágenes */
+}
+
+/* Estilos de botones */
+.button {
+    background-color: #6f3c3b; /* Color de fondo para botones */
+    color: #fff; /* Texto blanco para botones */
+    padding: 10px 20px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1.1em; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor a mano */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones para efectos */
+}
+
+.button:hover {
+    background-color: #c0a16c; /* Cambiar color al pasar el ratón */
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+/* Estilos de tablas */
+table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsar bordes */
+    margin-bottom: 40px; /* Espacio inferior */
+}
+
+th, td {
+    border: 1px solid #6f3c3b; /* Borde para celdas */
+    padding: 10px; /* Espacio interno */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+th {
+    background-color: #c0a16c; /* Fondo dorado para encabezados */
+    color: #3b2c2c; /* Texto oscuro para encabezados */
+}
+
+/* Estilos para citas */
+blockquote {
+    border-left: 5px solid #6f3c3b; /* Borde izquierdo */
+    padding-left: 15px; /* Espacio interno a la izquierda */
+    color: #666; /* Color gris para citas */
+    font-style: italic; /* Cursiva para citas */
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+/* Estilos de formulario */
+form {
+    background-color: #ffffff; /* Fondo blanco para formularios */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+form label {
+    display: block; /* Mostrar etiquetas en bloque */
+    margin-bottom: 5px; /* Espacio inferior */
+    font-weight: bold; /* Negrita para etiquetas */
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 15px; /* Espacio inferior */
+}
+
+form input[type="submit"] {
+    background-color: #6f3c3b; /* Color de fondo para el botón de enviar */
+    color: #fff; /* Texto blanco */
+}
+
+/* Estilos para formularios en móviles */
+@media (max-width: 768px) {
+    form {
+        padding: 15px; /* Reducir padding en móviles */
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+        padding: 8px; /* Reducir padding de campos en móviles */
+    }
+}
+/* Parte 3: Animaciones y estilos avanzados */
+
+/* Animaciones de entrada para secciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Desplazar hacia abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Volver a la posición original */
+    }
+}
+
+section {
+    animation: fadeIn 0.8s ease-in; /* Animación de desvanecimiento para secciones */
+}
+
+/* Efectos de paralaje para fondo */
+body {
+    background-image: url('path/to/your/hogwarts-background.jpg'); /* Imagen de fondo */
+    background-attachment: fixed; /* Fijar la imagen */
+    background-size: cover; /* Cubrir toda la pantalla */
+    background-position: center; /* Centrar imagen */
+}
+
+/* Estilos para los íconos mágicos */
+.icon {
+    width: 50px; /* Ancho de íconos */
+    height: 50px; /* Alto de íconos */
+    margin-right: 10px; /* Espacio a la derecha */
+    vertical-align: middle; /* Alinear verticalmente */
+}
+
+/* Estilo para listas de hechizos */
+.spell-list {
+    columns: 2; /* Dos columnas para listas de hechizos */
+    column-gap: 30px; /* Espacio entre columnas */
+}
+
+.spell-list li {
+    break-inside: avoid; /* Evitar que se rompa el contenido de lista */
+}
+
+/* Estilo para resaltados mágicos */
+.highlight {
+    background-color: #ffeb3b; /* Fondo amarillo para resaltar */
+    padding: 3px 5px; /* Espacio interno */
+    border-radius: 3px; /* Bordes redondeados */
+}
+
+/* Efectos de sombras en textos */
+.shadow-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para efecto */
+}
+
+/* Estilo para cajas de mensajes */
+.message-box {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    border-left: 5px solid #6f3c3b; /* Borde izquierdo */
+    padding: 15px; /* Espacio interno */
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+/* Efecto de aparición en imágenes */
+.image-fade-in {
+    opacity: 0; /* Comenzar invisible */
+    animation: fadeIn 1s forwards; /* Animación de desvanecimiento */
+}
+
+/* Estilo para navegaciones en pestañas */
+.tab {
+    overflow: hidden; /* Ocultar contenido adicional */
+    background-color: #f1f1f1; /* Fondo para pestañas */
+    margin-bottom: 15px; /* Espacio inferior */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.tab button {
+    background-color: inherit; /* Fondo transparente */
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno */
+    cursor: pointer; /* Cursor de mano */
+    padding: 10px; /* Espacio interno */
+    transition: background-color 0.3s; /* Transición de fondo */
+    font-size: 1.1em; /* Tamaño de fuente */
+}
+
+.tab button:hover {
+    background-color: #6f3c3b; /* Cambiar color al pasar el ratón */
+    color: #fff; /* Texto blanco al pasar el ratón */
+}
+
+/* Estilo para el contenido de pestañas */
+.tabcontent {
+    display: none; /* Ocultar contenido por defecto */
+    padding: 20px; /* Espacio interno */
+    border: 1px solid #6f3c3b; /* Borde marrón */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Mostrar contenido de la pestaña activa */
+.tabcontent.active {
+    display: block; /* Mostrar solo contenido activo */
+}
+
+/* Estilos de galería de imágenes */
+.gallery {
+    display: flex; /* Usar flexbox para galería */
+    flex-wrap: wrap; /* Ajustar imágenes en varias líneas */
+    gap: 15px; /* Espacio entre imágenes */
+}
+
+.gallery img {
+    flex: 1 1 calc(33% - 15px); /* Tres imágenes por fila */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra en imágenes */
+}
+
+/* Estilos para el hover en galería */
+.gallery img:hover {
+    transform: scale(1.05); /* Aumentar ligeramente al pasar el ratón */
+    transition: transform 0.3s; /* Transición de transformación */
+}
+
+/* Estilos para herramientas de aprendizaje */
+.learning-tools {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #c0a16c; /* Borde dorado */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos para enlaces de herramientas */
+.learning-tools a {
+    display: block; /* Enlaces en bloque */
+    margin: 10px 0; /* Espacio vertical entre enlaces */
+    padding: 10px; /* Espacio interno */
+    background-color: #6f3c3b; /* Fondo marrón para enlaces */
+    color: #fff; /* Texto blanco */
+    text-align: center; /* Centrar texto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición de fondo */
+}
+
+.learning-tools a:hover {
+    background-color: #c0a16c; /* Cambiar a dorado al pasar el ratón */
+}
+
+/* Estilos para leyendas de imágenes */
+.caption {
+    font-size: 0.9em; /* Tamaño de fuente pequeño */
+    text-align: center; /* Centrar texto */
+    color: #666; /* Color gris */
+}
+
+/* Estilos para notificaciones */
+.notification {
+    background-color: #f8d7da; /* Fondo rosa claro */
+    border: 1px solid #f5c6cb; /* Borde rojo claro */
+    color: #721c24; /* Texto oscuro */
+    padding: 15px; /* Espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 20px 0; /* Espacio vertical */
+}
+/* Parte 4: Estilos y detalles adicionales */
+
+/* Estilos para la barra lateral */
+.sidebar {
+    background-color: #f2f2f2; /* Fondo gris claro */
+    border-right: 2px solid #6f3c3b; /* Borde derecho */
+    padding: 20px; /* Espacio interno */
+    width: 250px; /* Ancho fijo */
+    position: fixed; /* Fijar la barra lateral */
+    height: 100%; /* Altura completa */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+}
+
+.sidebar h2 {
+    font-family: 'Almendra Display', cursive; /* Fuente decorativa para subtítulos */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilos para la lista de hechizos en la barra lateral */
+.sidebar .spell-list {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin relleno */
+}
+
+.sidebar .spell-list li {
+    margin: 10px 0; /* Espacio vertical entre elementos */
+}
+
+.sidebar .spell-list a {
+    color: #6f3c3b; /* Color marrón para enlaces */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s; /* Transición de color */
+}
+
+.sidebar .spell-list a:hover {
+    color: #c0a16c; /* Cambiar a dorado al pasar el ratón */
+}
+
+/* Estilo para la sección principal */
+.main-content {
+    margin-left: 270px; /* Espacio para la barra lateral */
+    padding: 20px; /* Espacio interno */
+}
+
+/* Estilo para las citas de personajes */
+.character-quote {
+    background-color: #fff4e6; /* Fondo suave */
+    border-left: 5px solid #6f3c3b; /* Borde izquierdo */
+    padding: 15px; /* Espacio interno */
+    font-style: italic; /* Cursiva para citas */
+}
+
+/* Estilos para eventos */
+.event {
+    border: 2px solid #c0a16c; /* Borde dorado */
+    padding: 20px; /* Espacio interno */
+    margin: 20px 0; /* Espacio vertical */
+    background-color: #f9f9f9; /* Fondo suave */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.event h3 {
+    margin-top: 0; /* Sin margen superior */
+}
+
+/* Estilo para formularios de comentarios */
+.comment-form {
+    margin: 20px 0; /* Espacio vertical */
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #6f3c3b; /* Borde marrón */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+}
+
+.comment-form textarea {
+    width: 100%; /* Ancho completo */
+    height: 100px; /* Altura fija */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    resize: none; /* Deshabilitar cambio de tamaño */
+}
+
+/* Estilos para los testimonios */
+.testimonial {
+    background-color: #eae5d7; /* Fondo suave */
+    padding: 20px; /* Espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 20px 0; /* Espacio vertical */
+}
+
+/* Efecto de desplazamiento en testimonios */
+.testimonial:hover {
+    transform: translateY(-2px); /* Elevar ligeramente al pasar el ratón */
+    transition: transform 0.2s; /* Transición suave */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #6f3c3b; /* Fondo marrón oscuro */
+    color: #ffffff; /* Texto blanco */
+    text-align: center; /* Centrar texto */
+    padding: 15px; /* Espacio interno */
+    position: relative; /* Posición relativa */
+    bottom: 0; /* Ajustar al fondo */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilo para enlaces en el pie de página */
+footer a {
+    color: #c0a16c; /* Color dorado para enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+
+/* Estilos para la sección de recursos */
+.resources {
+    display: flex; /* Usar flexbox para recursos */
+    flex-wrap: wrap; /* Ajustar recursos en varias líneas */
+    gap: 15px; /* Espacio entre recursos */
+    margin: 20px 0; /* Espacio vertical */
+}
+
+.resources div {
+    flex: 1 1 calc(30% - 15px); /* Tres recursos por fila */
+    background-color: #f9f9f9; /* Fondo suave */
+    padding: 15px; /* Espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo para herramientas y materiales */
+.materials {
+    list-style-type: square; /* Viñetas cuadradas */
+    padding-left: 20px; /* Espacio a la izquierda */
+}
+
+/* Estilos para gráficos y diagramas */
+.diagram {
+    max-width: 100%; /* Ancho completo */
+    border: 1px solid #6f3c3b; /* Borde marrón */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo para mensajes de advertencia */
+.warning {
+    background-color: #fff3cd; /* Fondo amarillo claro */
+    color: #856404; /* Texto oscuro */
+    border: 1px solid #ffeeba; /* Borde amarillo */
+    padding: 15px; /* Espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 20px 0; /* Espacio vertical */
+}
+/* Parte 5: Detalles finales y estilos complejos */
+
+/* Estilos para tarjetas de información */
+.card {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #6f3c3b; /* Borde marrón */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin: 20px 0; /* Espacio vertical */
+    overflow: hidden; /* Ocultar desbordamiento */
+}
+
+/* Estilo para el encabezado de las tarjetas */
+.card-header {
+    background-color: #6f3c3b; /* Fondo marrón oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 15px; /* Espacio interno */
+    font-size: 1.5em; /* Tamaño de fuente grande */
+}
+
+/* Estilo para el contenido de las tarjetas */
+.card-content {
+    padding: 20px; /* Espacio interno */
+}
+
+/* Estilo para botones de acción en tarjetas */
+.card-button {
+    background-color: #c0a16c; /* Fondo dorado */
+    color: #ffffff; /* Texto blanco */
+    padding: 10px 15px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s; /* Transición de fondo */
+}
+
+.card-button:hover {
+    background-color: #6f3c3b; /* Cambiar a marrón oscuro al pasar el ratón */
+}
+
+/* Estilo para contenedores de estadísticas */
+.statistics {
+    display: flex; /* Usar flexbox para estadísticas */
+    justify-content: space-around; /* Espacio entre elementos */
+    margin: 20px 0; /* Espacio vertical */
+}
+
+.statistic {
+    background-color: #f9f9f9; /* Fondo suave */
+    border: 1px solid #c0a16c; /* Borde dorado */
+    padding: 15px; /* Espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Centrar texto */
+}
+
+/* Estilos para gráficos de estadísticas */
+.chart {
+    max-width: 100%; /* Ancho completo */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para herramientas de magia */
+.magic-tool {
+    background-color: #6f3c3b; /* Fondo marrón oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 10px; /* Espacio interno */
+    margin: 10px 0; /* Espacio vertical */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo para el formulario de contacto */
+.contact-form {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #6f3c3b; /* Borde marrón */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+    margin: 20px 0; /* Espacio vertical */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espacio interno */
+    margin: 10px 0; /* Espacio vertical */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para listas de objetos mágicos */
+.magic-items {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin relleno */
+}
+
+.magic-items li {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    border: 1px solid #c0a16c; /* Borde dorado */
+    padding: 10px; /* Espacio interno */
+    margin: 10px 0; /* Espacio vertical */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo para tablas de contenido */
+.table-content {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsar bordes */
+    margin: 20px 0; /* Espacio vertical */
+}
+
+.table-content th,
+.table-content td {
+    border: 1px solid #6f3c3b; /* Borde marrón */
+    padding: 10px; /* Espacio interno */
+    text-align: center; /* Centrar texto */
+}
+
+.table-content th {
+    background-color: #c0a16c; /* Fondo dorado */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Estilos para secciones de aprendizaje */
+.learning-section {
+    margin: 20px 0; /* Espacio vertical */
+    padding: 15px; /* Espacio interno */
+    background-color: #f9f9f9; /* Fondo suave */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo para enlaces en secciones de aprendizaje */
+.learning-section a {
+    color: #6f3c3b; /* Color marrón */
+    text-decoration: underline; /* Subrayado */
+    transition: color 0.3s; /* Transición de color */
+}
+
+.learning-section a:hover {
+    color: #c0a16c; /* Cambiar a dorado al pasar el ratón */
+}
+
+/* Estilos para modales */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1000; /* Establecer en el nivel superior */
+    left: 0; /* Ajustar a la izquierda */
+    top: 0; /* Ajustar a la parte superior */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo negro semitransparente */
+}
+
+/* Estilo para el contenido del modal */
+.modal-content {
+    background-color: #fefefe; /* Fondo blanco */
+    margin: 15% auto; /* Centrar en la página */
+    padding: 20px; /* Espacio interno */
+    border: 1px solid #6f3c3b; /* Borde marrón */
+    border-radius: 5px; /* Bordes redondeados */
+    width: 80%; /* Ancho del modal */
+}
+
+/* Estilo para el botón de cierre del modal */
+.close {
+    color: #aaa; /* Color gris */
+    float: right; /* Alinear a la derecha */
+    font-size: 28px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Cambiar a negro al pasar el ratón */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cursor de mano */
+}
+
+/* Estilos para el timeline de eventos mágicos */
+.timeline {
+    position: relative; /* Posición relativa */
+    margin: 20px 0; /* Espacio vertical */
+}
+
+.timeline::after {
+    content: ''; /* Contenido vacío */
+    position: absolute; /* Posición absoluta */
+    left: 31px; /* Ajustar a la izquierda */
+    height: 100%; /* Altura completa */
+    border-left: 2px solid #6f3c3b; /* Borde marrón */
+}
+
+.timeline-event {
+    margin: 20px 0; /* Espacio vertical */
+    position: relative; /* Posición relativa */
+}
+
+.timeline-event .date {
+    position: absolute; /* Posición absoluta */
+    left: -40px; /* Ajustar a la izquierda */
+    top: 0; /* Ajustar a la parte superior */
+    background-color: #6f3c3b; /* Fondo marrón oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 5px; /* Espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.timeline-event .description {
+    padding-left: 60px; /* Espacio a la izquierda */
+}

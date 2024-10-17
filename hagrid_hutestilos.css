@@ -1,0 +1,514 @@
+/* ======== Estilos Generales ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cormorant Garamond', serif;
+    scroll-behavior: smooth;
+    transition: all 0.4s ease-in-out;
+}
+
+body {
+    background-color: #0d1b1e;
+    color: #f0e6d2;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ======== Fondo Animado (Estrellas Mágicas) ======== */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 2px, transparent 2px);
+    background-size: 60px 60px;
+    z-index: -2;
+    opacity: 0.2;
+    animation: parpadeoEstrellas 8s linear infinite;
+}
+
+body::after {
+    background-size: 80px 80px;
+    opacity: 0.15;
+    animation: parpadeoEstrellas 12s linear infinite reverse;
+}
+
+/* Animación del parpadeo de estrellas */
+@keyframes parpadeoEstrellas {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+}
+
+/* ======== Transición al cargar la página ======== */
+body {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ======== Encabezado ======== */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid #f0e6d2;
+}
+
+header h1 {
+    font-size: 3rem;
+    text-shadow: 0px 0px 15px #a67b5b, 0px 0px 30px #e6e2af;
+    color: #f5deb3;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #a67b5b; }
+    to { text-shadow: 0 0 30px #e6e2af; }
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* ======== Sección de Descripción ======== */
+#descripcion {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+#descripcion h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #d4af37;
+    text-transform: uppercase;
+}
+
+#descripcion p {
+    font-size: 1.1rem;
+    margin: 15px 0;
+    text-indent: 1.5em;
+}
+
+/* Lista decorada con iconos mágicos */
+#descripcion ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+#descripcion ul li::before {
+    content: '✨';
+    margin-right: 10px;
+}
+
+/* ======== Imagen con Efecto de Flotación ======== */
+#descripcion img {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+#descripcion img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* ======== Animación de partículas alrededor de la imagen ======== */
+@keyframes particulas {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+#descripcion img:hover::after {
+    content: '🌟';
+    position: absolute;
+    animation: particulas 2s infinite ease-in-out;
+    left: 10%;
+    top: 10%;
+}
+
+/* ======== Botón de Volver al Mapa ======== */
+#volver-mapa {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    background-color: #3a3a3a;
+    color: #f0e6d2;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#volver-mapa:hover {
+    background-color: #d4af37;
+    transform: scale(1.1);
+}
+
+/* ======== Footer ======== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f0e6d2;
+    border-top: 2px solid #d4af37;
+}
+
+/* Animación del pie de página al aparecer */
+footer {
+    opacity: 0;
+    animation: footerFade 2s 1.5s forwards;
+}
+
+@keyframes footerFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* ======== Efecto de Niebla Mágica Flotante ======== */
+body::before {
+    background: url('niebla.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.05;
+    animation: movimientoNiebla 25s linear infinite;
+}
+
+@keyframes movimientoNiebla {
+    0% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(20px) translateY(-10px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+/* ======== Efecto de Brillo Mágico en los Títulos ======== */
+h1::before, h2::before {
+    content: '✨';
+    margin-right: 10px;
+    opacity: 0;
+    animation: brilloTitulos 2s ease-in-out infinite;
+}
+
+@keyframes brilloTitulos {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* ======== Partículas Flotantes Animadas ======== */
+@keyframes particulasFlotantes {
+    0% { transform: translateY(0); opacity: 0.3; }
+    50% { transform: translateY(-20px); opacity: 0.7; }
+    100% { transform: translateY(0); opacity: 0.3; }
+}
+
+.particula {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: particulasFlotantes 10s ease-in-out infinite;
+}
+
+/* Distribución aleatoria de partículas */
+.particula:nth-child(1) { top: 10%; left: 20%; width: 5px; height: 5px; animation-duration: 8s; }
+.particula:nth-child(2) { top: 30%; left: 40%; width: 8px; height: 8px; animation-duration: 12s; }
+.particula:nth-child(3) { top: 50%; left: 60%; width: 6px; height: 6px; animation-duration: 10s; }
+.particula:nth-child(4) { top: 70%; left: 30%; width: 7px; height: 7px; animation-duration: 14s; }
+
+/* ======== Transición Suave en los Enlaces ======== */
+a {
+    color: #d4af37;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #d4af37;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
+/* ======== Efecto de Hover en las Secciones ======== */
+section {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+    padding: 20px;
+    transition: transform 0.5s ease, border-color 0.5s ease;
+}
+
+section:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Efecto de bordes animados (glitch) */
+section::before, section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    pointer-events: none;
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0%, 100% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); }
+    50% { clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%); }
+}
+
+/* ======== Efecto de Hover en los Botones ======== */
+button {
+    background: linear-gradient(45deg, #3a3a3a, #d4af37);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '✨';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: 30px;
+    opacity: 0.5;
+    animation: girarBrillo 6s linear infinite;
+}
+
+@keyframes girarBrillo {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* ======== Animación de Entrada para los Elementos ======== */
+@keyframes entradaSuave {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+main > * {
+    opacity: 0;
+    animation: entradaSuave 1s forwards;
+    animation-delay: 0.5s;
+}
+
+/* ======== Transición del Pie de Página ======== */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #f0e6d2;
+    border-top: 2px solid #d4af37;
+    opacity: 0;
+    animation: mostrarFooter 2s forwards 1s;
+}
+
+@keyframes mostrarFooter {
+    0% { opacity: 0; transform: translateY(100%); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+/* ======== Fondo Estrellado Dinámico ======== */
+body {
+    background: radial-gradient(circle, #0d1b2a, #1b263b, #0d1b2a);
+    overflow: hidden;
+}
+
+@keyframes estrellasParpadeo {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.estrella {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+    animation: estrellasParpadeo 5s infinite ease-in-out;
+}
+
+/* Generar múltiples estrellas */
+.estrella:nth-child(1) { top: 15%; left: 10%; width: 3px; height: 3px; }
+.estrella:nth-child(2) { top: 50%; left: 30%; width: 5px; height: 5px; animation-duration: 7s; }
+.estrella:nth-child(3) { top: 70%; left: 80%; width: 4px; height: 4px; animation-duration: 6s; }
+.estrella:nth-child(4) { top: 25%; left: 55%; width: 6px; height: 6px; animation-duration: 8s; }
+
+/* ======== Efecto de Portal Giratorio ======== */
+.portal {
+    position: relative;
+    margin: 50px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 10px solid rgba(255, 255, 255, 0.5);
+    animation: rotarPortal 20s linear infinite;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+    background: radial-gradient(circle, #3a3a3a, transparent 70%);
+}
+
+@keyframes rotarPortal {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ======== Transición de Cambio de Página ======== */
+html {
+    scroll-behavior: smooth;
+}
+
+.transicion-pagina {
+    opacity: 0;
+    animation: aparecerPagina 1.5s forwards;
+}
+
+@keyframes aparecerPagina {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ======== Hover con Efecto Luminoso ======== */
+button:hover {
+    background: linear-gradient(90deg, #d4af37, #3a3a3a);
+    box-shadow: 0 0 20px #f0e6d2, 0 0 40px rgba(255, 255, 255, 0.8);
+    transition: all 0.5s ease;
+}
+
+/* ======== Animación de Aparición de Cartel ======== */
+.cartel {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #d4af37;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transform: translateY(100%);
+    animation: mostrarCartel 1.5s forwards;
+}
+
+@keyframes mostrarCartel {
+    0% { opacity: 0; transform: translateY(100%); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ======== Efecto de Botón con Chispa ======== */
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    animation: chispa 2s infinite;
+}
+
+@keyframes chispa {
+    0% { opacity: 1; transform: scale(1) translate(-50%, -50%); }
+    100% { opacity: 0; transform: scale(5) translate(-50%, -50%); }
+}
+
+/* ======== Transición para Imágenes ======== */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+}
+
+/* ======== Footer que Flota al Desplazarse ======== */
+footer {
+    background: linear-gradient(45deg, #1b263b, #0d1b2a);
+    color: #d4af37;
+    padding: 10px;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    position: sticky;
+    bottom: 0;
+    animation: flotarFooter 3s infinite ease-in-out alternate;
+}
+
+@keyframes flotarFooter {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+/* ======== Efecto de Neblina en los Bordes ======== */
+.borde-neblina::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3));
+    opacity: 0.2;
+    filter: blur(8px);
+    animation: neblinaAnimada 4s infinite;
+}
+
+@keyframes neblinaAnimada {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+}
