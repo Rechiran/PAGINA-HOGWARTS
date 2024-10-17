@@ -2,17 +2,15 @@
 function inicializarSonidoLogo() {
     const logoElement = document.querySelector('.logo');
     const magicSound = new Audio('logosonido.mp3');
-    let isPlaying = false; // Controla si el sonido se está reproduciendo
+    let isPlaying = false;
 
     if (logoElement) {
-        // Esperar a la interacción del usuario para desbloquear el audio
         logoElement.addEventListener('click', () => {
             if (isPlaying) {
                 magicSound.pause();
-                magicSound.currentTime = 0; // Reiniciar desde el inicio
+                magicSound.currentTime = 0;
                 isPlaying = false;
             } else {
-                // Intentar reproducir el sonido al hacer clic
                 magicSound.play()
                     .then(() => {
                         isPlaying = true;
@@ -23,23 +21,18 @@ function inicializarSonidoLogo() {
             }
         });
 
-        // Resetear el estado al finalizar el audio
         magicSound.addEventListener('ended', () => {
             isPlaying = false;
         });
 
-        // Llamar a la función opcional para rotar el logo
         rotarLogoAutomaticamente(logoElement);
     } else {
         console.warn('Elemento logo no encontrado en el DOM.');
     }
 }
 
-// Esperar a que el DOM esté completamente cargado antes de inicializar
 document.addEventListener('DOMContentLoaded', inicializarSonidoLogo);
 
-// Selecciona los elementos necesarios
-// Definición de variables y selección de elementos
 const mapaHogwarts = document.getElementById('mapa-hogwarts');
 const listaLugares = document.getElementById('lista-lugares');
 const modal = document.getElementById('modal');
@@ -47,15 +40,13 @@ const modalIframe = document.getElementById('modal-iframe');
 const closeModal = document.querySelector('.close');
 const submenuHouses = document.querySelector('.submenu-houses');
 
-// Establecer tamaño de la ventana modal igual al tamaño de la sección del mapa
 function setModalSize() {
-    const sectionMapHeight = mapaHogwarts.clientHeight; // Obtener la altura de la sección del mapa
-    const sectionMapWidth = mapaHogwarts.clientWidth; // Obtener la anchura de la sección del mapa
-    modal.style.height = sectionMapHeight + 'px'; // Establecer la altura de la modal
-    modal.style.width = sectionMapWidth + 'px'; // Establecer la anchura de la modal
+    const sectionMapHeight = mapaHogwarts.clientHeight;
+    const sectionMapWidth = mapaHogwarts.clientWidth;
+    modal.style.height = sectionMapHeight + 'px';
+    modal.style.width = sectionMapWidth + 'px';
 }
 
-// Función para mostrar la lista de lugares
 function toggleListaLugares() {
     if (listaLugares.style.display === 'none') {
         listaLugares.style.display = 'block';
@@ -64,52 +55,49 @@ function toggleListaLugares() {
     }
 }
 
-// Evento para mostrar la lista de lugares al hacer clic en el mapa
 mapaHogwarts.addEventListener('click', () => {
     toggleListaLugares();
-    setModalSize(); // Ajustar el tamaño de la modal al mostrar la lista
+    setModalSize();
 });
 
-// Función para cargar contenido en la modal
 function loadContent(url) {
-    modalIframe.src = url; // Cargar el contenido en el iframe
+    modalIframe.src = url;
     modal.style.display = 'block';
-    setModalSize(); // Ajustar el tamaño de la modal al cargar el contenido
+    setModalSize();
 }
 
-// Función para manejar clics en los enlaces de la lista
 function handleLinkClick(e) {
     e.preventDefault();
-    submenuHouses.style.display = 'none'; // Ocultar el submenu de casas
+    submenuHouses.style.display = 'none';
     const lugar = e.target.textContent;
 
     switch (lugar) {
         case 'Hogsmeade':
-            loadContent('hogsmeade.html'); // Ruta del contenido de Hogsmeade
+            loadContent('hogsmeade.html');
             break;
         case 'Quidditch Pitch':
-            loadContent('quidditchpitch.html'); // Cambia esto por la ruta del contenido de Quidditch Pitch
+            loadContent('quidditchpitch.html');
             break;
         case "Hagrid's Hut":
-            loadContent('hagrid_hut.html'); // Cambia esto por la ruta del contenido de Hagrid's Hut
+            loadContent('hagrid_hut.html');
             break;
         case 'Black Lake':
-            loadContent('black_lake.html'); // Cambia esto por la ruta del contenido del Black Lake
+            loadContent('black_lake.html');
             break;
         case 'Hogsmeade Station':
-            loadContent('hogsmeade_station.html'); // Cambia esto por la ruta del contenido de Hogsmeade Station
+            loadContent('hogsmeade_station.html');
             break;
         case 'Hogwarts School':
-            loadContent('hogwarts_school.html'); // Cambia esto por la ruta del contenido de Hogwarts School
+            loadContent('hogwarts_school.html');
             break;
         case 'Whomping Willow':
-            loadContent('whomping_willow.html'); // Cambia esto por la ruta del contenido de Whomping Willow
+            loadContent('whomping_willow.html');
             break;
         case 'Forbidden Forest':
-            loadContent('forbidden_forest.html'); // Cambia esto por la ruta del contenido de Forbidden Forest
+            loadContent('forbidden_forest.html');
             break;
         case 'The Owlery':
-            loadContent('owlery.html'); // Cambia esto por la ruta del contenido de The Owlery
+            loadContent('owlery.html');
             break;
         default:
             console.error('Lugar no reconocido:', lugar);
@@ -117,45 +105,38 @@ function handleLinkClick(e) {
     }
 }
 
-// Agregar eventos a los enlaces de la lista
 const links = listaLugares.querySelectorAll('a');
 links.forEach(link => {
     link.addEventListener('click', handleLinkClick);
 });
 
-// Función para cerrar la modal y recargar la página
 function closeModalWindow() {
     modal.style.display = 'none';
-    modalIframe.src = ''; // Limpiar el src del iframe para evitar conflictos
-    location.reload(); // Recarga la página al cerrar la modal
+    modalIframe.src = '';
+    location.reload();
 }
 
-// Evento para cerrar la ventana modal
 closeModal.addEventListener('click', closeModalWindow);
 
-// Cierra la modal si se hace clic fuera de ella
 window.addEventListener('click', (event) => {
     if (event.target === modal) {
         closeModalWindow();
     }
 });
 
-// Inicializa la aplicación
 function initializeApp() {
-    listaLugares.style.display = 'none'; // Asegura que la lista esté oculta al inicio
-    modal.style.display = 'none'; // Asegura que la modal esté oculta al inicio
+    listaLugares.style.display = 'none';
+    modal.style.display = 'none';
 }
 
-// Inicia la aplicación
 initializeApp();
-setModalSize(); // Ajustar el tamaño de la modal al inicio
+setModalSize();
 
 document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".nav-links a");
     const navbar = document.querySelector(".navbar");
     let lastScrollTop = 0;
   
-    // Desplazamiento suave al hacer clic en los enlaces
     links.forEach(link => {
       link.addEventListener("click", function (e) {
         e.preventDefault();
@@ -164,26 +145,24 @@ document.addEventListener("DOMContentLoaded", () => {
   
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - navbar.offsetHeight, // Ajusta por la altura de la barra
+            top: targetElement.offsetTop - navbar.offsetHeight,
             behavior: "smooth"
           });
         }
       });
     });
   
-    // Ocultar barra de navegación al hacer scroll hacia abajo
     window.addEventListener("scroll", () => {
       const currentScroll = window.pageYOffset;
   
       if (currentScroll > lastScrollTop) {
-        navbar.style.top = "-70px"; // Oculta la barra
+        navbar.style.top = "-70px";
       } else {
-        navbar.style.top = "0"; // Muestra la barra
+        navbar.style.top = "0";
       }
       lastScrollTop = Math.max(0, currentScroll);
     });
   
-    // Marcar el enlace activo según la sección visible
     window.addEventListener("scroll", () => {
       let currentSection = "";
   
@@ -202,9 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 });
-// Selección de botones y formularios
-    // Función para mostrar el formulario de inicio de sesión
-// JavaScript para la funcionalidad de inicio de sesión y registro
 const loginButton = document.getElementById('loginButton');
 const registerButton = document.getElementById('registerButton');
 const loginForm = document.getElementById('loginFormElement');
@@ -217,25 +193,21 @@ const logoutButton = document.getElementById('logoutButton');
 
 let users = JSON.parse(localStorage.getItem('users')) || [];
 
-// Validar contraseña fuerte
 function isStrongPassword(password) {
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return regex.test(password);
 }
 
-// Mostrar formulario de inicio de sesión
 loginButton.addEventListener('click', () => {
     loginForm.style.display = 'block';
     registerForm.style.display = 'none';
 });
 
-// Mostrar formulario de registro
 registerButton.addEventListener('click', () => {
     registerForm.style.display = 'block';
     loginForm.style.display = 'none';
 });
 
-// Volver a botones de autenticación
 backToAuth.addEventListener('click', () => {
     loginForm.style.display = 'none';
 });
@@ -244,14 +216,12 @@ backToAuthRegister.addEventListener('click', () => {
     registerForm.style.display = 'none';
 });
 
-// Manejo de cierre de sesión
 logoutButton.addEventListener('click', () => {
     localStorage.removeItem('loggedInUser');
     logoutSection.style.display = 'none';
     document.querySelector('.auth-buttons').style.display = 'block';
 });
 
-// Manejo del registro
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const username = document.getElementById('registerformUsername').value;
@@ -277,7 +247,6 @@ registerForm.addEventListener('submit', (e) => {
     registerForm.style.display = 'none';
 });
 
-// Manejo del inicio de sesión
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('loginformEmail').value;
@@ -297,7 +266,6 @@ loginForm.addEventListener('submit', (e) => {
     logoutSection.style.display = 'block';
 });
 
-// Comprobar si hay un usuario logueado al cargar la página
 window.addEventListener('load', () => {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (loggedInUser) {
@@ -306,7 +274,6 @@ window.addEventListener('load', () => {
         logoutSection.style.display = 'block';
     }
 });
-// Objeto con las traducciones: clave en español, valor en inglés
 const translations = {
     "Iniciar Sesión": "Log In",
     "Registrarse": "Sign Up",
@@ -466,19 +433,16 @@ const translations = {
     
 };
 
-// Al cargar la página, aplica el idioma guardado o 'es' por defecto
 document.addEventListener('DOMContentLoaded', () => {
     const savedLanguage = localStorage.getItem('language') || 'es';
     applyLanguage(savedLanguage);
 });
 
 
-// Función para aplicar el idioma seleccionado
 function applyLanguage(language) {
     document.querySelectorAll("[data-translate]").forEach(element => {
         const originalText = element.getAttribute('data-translate');
 
-        // Mostrar el nombre del usuario si es el mensaje de bienvenida
         if (originalText === "Bienvenido,") {
             const userName = localStorage.getItem("userName") || "Usuario";
             element.textContent = `${translations[originalText] || originalText} ${userName}`;
@@ -489,30 +453,24 @@ function applyLanguage(language) {
         }
     });
 
-    // Resaltar el botón del idioma activo
     document.querySelectorAll('.language-switch button').forEach(button => {
         button.classList.toggle('active', button.id === `lang-${language}`);
     });
 
-    // Guardar el idioma en localStorage
     localStorage.setItem('language', language);
 }
 
-// Cambiar idioma al presionar un botón
 function changeLanguage(language) {
     applyLanguage(language);
 }
 
 const titulos = document.querySelectorAll('.titulo');
 
-    // Agrega un evento de clic a cada título
     titulos.forEach(titulo => {
         titulo.addEventListener('click', () => {
-            // Alterna la visibilidad del contenido correspondiente
             const contenido = titulo.nextElementSibling;
             contenido.style.display = contenido.style.display === 'block' ? 'none' : 'block';
 
-            // Opcional: Si deseas cerrar otros contenidos al abrir uno nuevo
             titulos.forEach(otherTitulo => {
                 if (otherTitulo !== titulo) {
                     otherTitulo.nextElementSibling.style.display = 'none';
@@ -528,13 +486,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menu-toggle");
     const mobileNav = document.getElementById("mobile-nav");
 
-    // Alternar la clase 'active' para el botón y 'show' para el menú
     menuToggle.addEventListener("click", () => {
         menuToggle.classList.toggle("active");
         mobileNav.classList.toggle("show");
     });
 
-    // Cerrar el menú móvil al hacer clic en un enlace
     document.querySelectorAll(".mobile-nav a").forEach(link => {
         link.addEventListener("click", () => {
             menuToggle.classList.remove("active");
@@ -542,7 +498,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-// Inicialización de contadores de descargas y historial en localStorage si no existen
 if (!localStorage.getItem('downloadData')) {
     const initialData = {
         downloadCount: {
@@ -554,16 +509,12 @@ if (!localStorage.getItem('downloadData')) {
     localStorage.setItem('downloadData', JSON.stringify(initialData));
 }
 
-// Función para obtener datos de descargas desde localStorage
 function getDownloadData() {
     return JSON.parse(localStorage.getItem('downloadData'));
 }
-
-// Función para manejar la descarga
 function handleDownload(file) {
     const data = getDownloadData();
 
-    // Incrementar el contador de descargas para el archivo correspondiente
     if (file === 'hechizos') {
         data.downloadCount.hechizos++;
         alert(`Has descargado "Hechizos Ancestrales". Total de descargas: ${data.downloadCount.hechizos}`);
@@ -572,21 +523,18 @@ function handleDownload(file) {
         alert(`Has descargado "Pociones Curativas". Total de descargas: ${data.downloadCount.pociones}`);
     }
 
-    // Agregar registro de descarga al historial
     const downloadRecord = {
         file: file === 'hechizos' ? 'Hechizos Ancestrales' : 'Pociones Curativas',
         date: new Date().toLocaleString(),
     };
     data.history.push(downloadRecord);
-
-    // Actualizar datos en localStorage
+    
     localStorage.setItem('downloadData', JSON.stringify(data));
 }
 
-// Función para mostrar el historial de descargas
 function showDownloadHistory() {
     const historySection = document.getElementById('download-history');
-    historySection.innerHTML = ''; // Limpiar el historial previo
+    historySection.innerHTML = '';
 
     const data = getDownloadData();
 
@@ -596,31 +544,26 @@ function showDownloadHistory() {
         historySection.appendChild(historyItem);
     });
 
-    // Mostrar el historial
     historySection.style.display = 'block';
 }
 
-// Función para ocultar el historial de descargas
 function hideDownloadHistory() {
     const historySection = document.getElementById('download-history');
-    historySection.style.display = 'none'; // Ocultar el historial
+    historySection.style.display = 'none';
 }
 
-// Función para borrar el historial de descargas
 function clearDownloadHistory() {
     const data = getDownloadData();
-    data.history = []; // Borrar el historial
+    data.history = [];
     localStorage.setItem('downloadData', JSON.stringify(data));
     alert('Historial de descargas borrado correctamente.');
-    hideDownloadHistory(); // Ocultar el historial después de borrarlo
+    hideDownloadHistory();
 }
 
-// Función para inicializar eventos
 function init() {
     const hechizosLink = document.querySelector('a[href="hechizos.pdf"]');
     const pocionesLink = document.querySelector('a[href="pociones.pdf"]');
 
-    // Agregar eventos de clic para cada enlace
     hechizosLink.addEventListener('click', function(event) {
         handleDownload('hechizos');
     });
@@ -629,19 +572,13 @@ function init() {
         handleDownload('pociones');
     });
 
-    // Botones para mostrar, ocultar y borrar el historial de descargas
     document.getElementById('show-history').addEventListener('click', showDownloadHistory);
     document.getElementById('hide-history').addEventListener('click', hideDownloadHistory);
     document.getElementById('clear-history').addEventListener('click', clearDownloadHistory);
 }
 
-// Inicializar el script una vez que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', init);
 
-
-
-
-// Elementos del DOM
 const comenzarTestBtn = document.getElementById("comenzar-test");
 const resultadoCasaDiv = document.getElementById("resultado-casa");
 const casaAsignadaSpan = document.getElementById("casa-asignada");
@@ -649,7 +586,6 @@ const sombreroSeleccionadorSection = document.getElementById("sombrero-seleccion
 const cuestionarioDiv = document.getElementById("cuestionario");
 const tituloTest = document.getElementById("titulo-test");
 
-// Preguntas del test
 const preguntas = [
     {
         pregunta: "¿Cuál es tu materia favorita en Hogwarts?",
@@ -685,7 +621,6 @@ const preguntas = [
     }
 ];
 
-// Asignar casas
 const casas = {
     "Gryffindor": 0,
     "Hufflepuff": 0,
@@ -693,7 +628,6 @@ const casas = {
     "Slytherin": 0
 };
 
-// Clase para manejar el test del sombrero
 class SombreroSeleccionador {
     constructor(preguntas) {
         this.preguntas = preguntas;
@@ -701,16 +635,16 @@ class SombreroSeleccionador {
     }
 
     iniciarTest() {
-        comenzarTestBtn.style.display = "none"; // Ocultar botón de inicio
-        cuestionarioDiv.style.display = "block"; // Mostrar cuestionario
-        this.mostrarPregunta(); // Iniciar el cuestionario
+        comenzarTestBtn.style.display = "none";
+        cuestionarioDiv.style.display = "block";
+        this.mostrarPregunta();
     }
 
     mostrarPregunta() {
         if (this.preguntaActual < this.preguntas.length) {
             const { pregunta, opciones } = this.preguntas[this.preguntaActual];
             tituloTest.textContent = pregunta;
-            cuestionarioDiv.innerHTML = ""; // Limpiar respuestas anteriores
+            cuestionarioDiv.innerHTML = "";
             opciones.forEach(opcion => this.crearBotonOpcion(opcion));
         } else {
             this.mostrarResultado();
@@ -720,7 +654,7 @@ class SombreroSeleccionador {
     crearBotonOpcion(opcion) {
         const btn = document.createElement("button");
         btn.textContent = opcion;
-        btn.classList.add("auth-buttons"); // Añadir clase para CSS
+        btn.classList.add("auth-buttons");
         btn.onclick = () => this.evaluarRespuesta(opcion);
         cuestionarioDiv.appendChild(btn);
     }
@@ -748,15 +682,14 @@ class SombreroSeleccionador {
 
     mostrarResultado() {
         const casaFinal = Object.keys(casas).reduce((a, b) => casas[a] > casas[b] ? a : b);
-        localStorage.setItem("casaSeleccionada", casaFinal); // Guardar la casa en localStorage
+        localStorage.setItem("casaSeleccionada", casaFinal);
         sombreroSeleccionadorSection.style.display = "block";
         resultadoCasaDiv.style.display = "block";
         casaAsignadaSpan.textContent = casaFinal;
         this.mostrarMensajeAdicional(casaFinal);
         
-        // Ocultar los botones y el texto
-        comenzarTestBtn.classList.add("hidden"); // Ocultar botón de iniciar test
-        tituloTest.classList.add("hidden"); // Ocultar texto "Responde las preguntas para descubrir a qué casa perteneces"
+        comenzarTestBtn.classList.add("hidden");
+        tituloTest.classList.add("hidden");
     
         this.finalizarTest();
     }
@@ -777,19 +710,19 @@ class SombreroSeleccionador {
             sombreroSeleccionadorSection.style.display = "block";
             resultadoCasaDiv.style.display = "block";
             casaAsignadaSpan.textContent = casaGuardada;
-            comenzarTestBtn.style.display = "none"; // Ocultar el botón de inicio
-            cuestionarioDiv.style.display = "none"; // Ocultar el cuestionario
+            comenzarTestBtn.style.display = "none";
+            cuestionarioDiv.style.display = "none"; 
         }
     }
 
     reiniciarTest() {
         this.preguntaActual = 0;
-        Object.keys(casas).forEach(casa => casas[casa] = 0); // Reiniciar valores
+        Object.keys(casas).forEach(casa => casas[casa] = 0);
         comenzarTestBtn.style.display = "block";
         resultadoCasaDiv.style.display = "none";
-        sombreroSeleccionadorSection.style.display = "block"; // Asegurar que la sección esté visible
-        cuestionarioDiv.style.display = "none"; // Ocultar cuestionario
-        tituloTest.textContent = "Test del Sombrero Seleccionador"; // Restablecer título
+        sombreroSeleccionadorSection.style.display = "block";
+        cuestionarioDiv.style.display = "none";
+        tituloTest.textContent = "Test del Sombrero Seleccionador";
     }
 
     guardarResultadoEnLocalStorage() {
@@ -838,16 +771,13 @@ class SombreroSeleccionador {
     }
 }
 
-// Instancia de la clase SombreroSeleccionador
 const sombrero = new SombreroSeleccionador(preguntas);
 
-// Evento al hacer clic en "Comenzar Test"
 comenzarTestBtn.addEventListener("click", () => {
     sombrero.iniciarTest();
-    sombrero.crearBotonReinicio(); // Crear botón de reinicio
+    sombrero.crearBotonReinicio();
 });
 
-// Cargar la casa y el resultado guardado al cargar la página
 window.onload = () => {
     sombrero.cargarCasa();
     sombrero.cargarResultadoGuardado();
