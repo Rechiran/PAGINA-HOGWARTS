@@ -782,3 +782,56 @@ window.onload = () => {
     sombrero.cargarCasa();
     sombrero.cargarResultadoGuardado();
 };
+// Seleccionar el elemento donde se mostrará el contador
+const visitCountElement = document.getElementById('visit-count');
+
+// Verificar si hay un valor previo guardado en localStorage
+let visitCount = localStorage.getItem('visitCount');
+
+// Si no existe, inicializamos el contador en 0
+if (visitCount === null) {
+    visitCount = 0;
+} else {
+    visitCount = parseInt(visitCount, 10); // Convertir a número entero
+}
+
+// Mostrar el valor actual en el HTML antes de incrementar
+visitCountElement.textContent = visitCount;
+
+// Incrementar el contador y actualizar el almacenamiento local
+visitCount += 1;
+localStorage.setItem('visitCount', visitCount);
+// Seleccionar todas las imágenes de las casas
+const casaImagenes = document.querySelectorAll('.casa-imagen');
+
+// Función que redirige a la página correspondiente según la casa
+function redirigirCasa(casa) {
+    let url = '';
+
+    switch (casa) {
+        case 'gryffindor':
+            url = 'gryffindor.html';  // Cambia a la URL de la casa Gryffindor
+            break;
+        case 'ravenclaw':
+            url = 'ravenclaw.html';  // Cambia a la URL de la casa Ravenclaw
+            break;
+        case 'hufflepuff':
+            url = 'hufflepuff.html';  // Cambia a la URL de la casa Hufflepuff
+            break;
+        case 'slytherin':
+            url = 'slytherin.html';  // Cambia a la URL de la casa Slytherin
+            break;
+    }
+
+    if (url) {
+        window.location.href = url; // Redirige a la página correspondiente
+    }
+}
+
+// Añadir evento de clic a cada imagen
+casaImagenes.forEach(img => {
+    img.addEventListener('click', () => {
+        const casaClase = img.closest('article').classList[1]; // Obtener la clase de la casa
+        redirigirCasa(casaClase);
+    });
+});
